@@ -3,17 +3,17 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
 type User {
   _id: ID
-  username:String
+  userName:String
   email:String
   password:String
-  quotes:[Quotes]!
+  quotes:[Quote]!
 }
 
 type Quote {
   _id:ID
   quoteText:String
   quoteAuthor:String
-  createdAt:Date
+  createdAt:String
   quotePoster:String
 
 }
@@ -23,9 +23,7 @@ type Quote {
     quotes: [Quote]
   }
 
-  type Mutation {
-    
-  }
+  
 `;
 
 module.exports = typeDefs;
