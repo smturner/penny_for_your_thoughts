@@ -29,6 +29,6 @@ const quoteSchema = new Schema({
 
 
 
-const Quote = model('User', quoteSchema);
+const Quote = model('Quote', quoteSchema);
 
 module.exports = Quote;
