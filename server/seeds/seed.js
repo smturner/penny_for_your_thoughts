@@ -12,11 +12,17 @@ db.once('open', async () => {
     //Insert the 3 dummy users from the userData.json file.
     const users = await User.insertMany(userData);
 
-    //Insert the dummy quotes.
+    const userArray= users.map((user) => user._id)
+    console.log(userArray)
+    // Insert the dummy quotes.
+
     for (let i = 0; i < quoteSeeds.length; i++) {
-      const { _id, quotePoster } = await Quote.create(quoteSeeds[i]);
-      const user = await User.findOneAndUpdate(
-        { username: quotePoster },
+      const id= userArray[i]
+      const {quoteText, quoteAuthor}= quoteSeeds[i]
+      const quoteData = { quotePoster:id, quoteText, quoteAuthor }
+      const { _id } = await Quote.create(quoteData);
+      await User.findOneAndUpdate(
+        { _id: id },
         {
           $addToSet: {
             quotes: _id,
