@@ -2,19 +2,17 @@
 [
     {
         "quoteText": "Users are not good people!",
-        "quoteAuthor": "Poornima Sewak",
-        "quotePoster": "dummy"
+        "quoteAuthor": "Poornima Sewak"
     },
 
     {
         "quoteText": "Hungry minds don't understand anything.",
-        "quoteAuthor": "Poornima Sewak",
-        "quotePoster": "dummy"
+        "quoteAuthor": "Poornima Sewak"
     },
 
     {
         "quoteText": "Half of being smart is knowing what you are dumb about.",
-        "quoteAuthor": "Solomon Short",
-        "quotePoster": "Test1"
+        "quoteAuthor": "Solomon Short"
+        
     }
 ]

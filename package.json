@@ -10,6 +10,7 @@
     "seed": "cd server && npm run seed",
     "build": "cd client && npm run build"
   },
+  "keyworkds": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
