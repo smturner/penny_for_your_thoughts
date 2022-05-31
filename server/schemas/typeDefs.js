@@ -17,13 +17,22 @@ type Quote {
   quotePoster:String
 
 }
+
+type Auth {
+  token: ID!
+  user: User
+}
   
   type Query {
     users: [User]
     quotes: [Quote]
   }
 
-  
+  type Mutation {
+    addUser (userName: String!, email: String!, password: String!): Auth
+    login(email: String!, password: String!): Auth
+  }
+
 `;
 
 module.exports = typeDefs;
