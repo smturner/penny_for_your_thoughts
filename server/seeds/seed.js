@@ -19,7 +19,7 @@ db.once('open', async () => {
     for (let i = 0; i < quoteSeeds.length; i++) {
       const id= userArray[i]
       const {quoteText, quoteAuthor}= quoteSeeds[i]
-      const quoteData = { quotePoster:id, quoteText, quoteAuthor }
+      const quoteData = { quotePoster: id, quoteText, quoteAuthor }
       const { _id } = await Quote.create(quoteData);
       await User.findOneAndUpdate(
         { _id: quotePoster },
