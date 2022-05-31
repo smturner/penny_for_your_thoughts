@@ -29,13 +29,13 @@ const userSchema = new Schema({
         }
     ],
 
-    // Add in a way to have friends later:
-    // friends: [
-    //     {
-    //         type: Schema.Types.ObjectId,
-    //         ref: 'User'
-    //     }
-    // ]
+    // Add in a way to have "follows" later:
+    follows: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'User'
+        }
+    ]
 });
 
 userSchema.pre('save', async function (next) {
