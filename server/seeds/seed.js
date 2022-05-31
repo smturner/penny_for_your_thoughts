@@ -10,10 +10,10 @@ db.once('open', async () => {
     await Quote.deleteMany({});
 
     //Insert the 3 dummy users from the userData.json file.
-    const users = await User.insertMany(userData);
+    const users = await User.create(userData);
 
     const userArray= users.map((user) => user._id)
-    console.log(userArray)
+    // console.log(userArray)
     // Insert the dummy quotes.
 
     for (let i = 0; i < quoteSeeds.length; i++) {
@@ -22,7 +22,7 @@ db.once('open', async () => {
       const quoteData = { quotePoster:id, quoteText, quoteAuthor }
       const { _id } = await Quote.create(quoteData);
       await User.findOneAndUpdate(
-        { _id: id },
+        { _id: quotePoster },
         {
           $addToSet: {
             quotes: _id,
