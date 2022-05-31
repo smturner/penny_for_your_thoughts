@@ -22,7 +22,7 @@ db.once('open', async () => {
       const quoteData = { quotePoster: id, quoteText, quoteAuthor }
       const { _id } = await Quote.create(quoteData);
       await User.findOneAndUpdate(
-        { _id: quotePoster },
+        { _id: userArray[i] },
         {
           $addToSet: {
             quotes: _id,
