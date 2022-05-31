@@ -26,8 +26,8 @@ type Auth {
   type Query {
     users: [User]
     quotes: [Quote]
-    user: User
-    quote: Quote
+    user(userId: ID!):  User
+    quote(quoteId: ID!): Quote
     me: User
   }
 
