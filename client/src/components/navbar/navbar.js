@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import {Navbar, Nav, Container} from 'react-bootstrap'
 
-const Navbar = () => {
+const MainNav = () => {
     return (
         <header>
             <Navbar bg="light" expand="lg">
@@ -33,4 +33,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default MainNav;

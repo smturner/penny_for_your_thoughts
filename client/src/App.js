@@ -6,6 +6,7 @@ import React from 'react';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import AppLogin from './AppLogin'
 
+
 const client = new ApolloClient({
   uri: '/graphql',
   cache: new InMemoryCache(),
@@ -16,6 +17,8 @@ function App() {
     <ApolloProvider client={client}>
       <div className="App">
         <header className="App-header">
+          
+
           <AppLogin />
 
           {/* <img src={logo} className="App-logo" alt="logo" />
