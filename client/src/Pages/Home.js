@@ -1,10 +1,12 @@
 import React from 'react';
-import MainNav from './components/navbar/navbar';
+import LoginCard from '../components/card/loginCard'
 
 const Home = () => {
     return (
         <div>
-            <MainNav />
+            <LoginCard />
         </div>
     );
 };
+
+export default Home

@@ -6,7 +6,7 @@ import {Navbar, Nav, Container} from 'react-bootstrap'
 const MainNav = () => {
     return (
         <header>
-            <Navbar bg="light" expand="lg">
+            <Navbar fixed="top" bg="light" expand="lg">
   <Container>
     <Navbar.Brand href="/">Penny For Your Thoughts</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
