@@ -29,10 +29,17 @@ const userSchema = new Schema({
         }
     ],
 
-    // Add friends here later.
+    // Add in a way to have "follows" later:
+    follows: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'User'
+        }
+    ]
 });
 
 userSchema.pre('save', async function (next) {
+    console.log("bcrypt is running")
     if (this.isNew || this.isModified('password')) {
       this.password = await bcrypt.hash(this.password, 10);
     }
