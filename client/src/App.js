@@ -1,8 +1,10 @@
-import logo from './logo.svg';
+
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import React from 'react';
 //need these imports to connect apolloClient to front end
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import AppLogin from './AppLogin'
 
 const client = new ApolloClient({
   uri: '/graphql',
@@ -14,7 +16,9 @@ function App() {
     <ApolloProvider client={client}>
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <AppLogin />
+
+          {/* <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
@@ -25,7 +29,7 @@ function App() {
             rel="noopener noreferrer"
           >
             Learn React
-          </a>
+          </a> */}
         </header>
       </div>
     </ApolloProvider>
