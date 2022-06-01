@@ -8,6 +8,10 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import AppLogin from './AppLogin'
 import MainNav from './components/navbar/navbar';
 import Home from './Pages/Home'
+import CreateQuote from './Pages/createQuote'
+import UserQuotes from './Pages/userQuotes'
+import AllQuotes from './Pages/allQuotes';
+
 const client = new ApolloClient({
   uri: '/graphql',
   cache: new InMemoryCache(),
@@ -18,10 +22,12 @@ function App() {
     <ApolloProvider client={client}>
       <div className="App">
         <header className="App-header">
-          {/* <MainNav /> */}
+          <MainNav />
             {/* <Home /> */}
-          <AppLogin />
-
+          {/* <AppLogin /> */}
+          {/* <CreateQuote /> */}
+          {/* <UserQuotes /> */}
+          {/* <AllQuotes /> */}
           {/* <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
@@ -31,7 +37,7 @@ function App() {
             href="https://reactjs.org"
             target="_blank"
             rel="noopener noreferrer"
-          >
+          >git 
             Learn React
           </a> */}
         </header>
