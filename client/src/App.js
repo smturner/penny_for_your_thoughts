@@ -11,7 +11,9 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import MainNav from './components/navbar/navbar';
 import Home from './Pages/Home'
 import LoginCard from './components/card/loginCard'
-
+// import CreateQuote from './Pages/createQuote'
+// import UserQuotes from './Pages/userQuotes'
+// import AllQuotes from './Pages/allQuotes';
 import Login from './components/login/login.component'
 import SignUp from './components/login/signup.component'
 
