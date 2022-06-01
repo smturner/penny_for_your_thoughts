@@ -52,6 +52,8 @@ const resolvers = {
       return { token, user };
     },
 
+  
+
     // When we build front end, figure out where we are getting the userName or User Id to follow.    
     // addFollow: async (parent, { userName }, context) => {
     //   const newFollowId = await User.findOne({ userName })
