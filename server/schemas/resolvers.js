@@ -52,6 +52,7 @@ const resolvers = {
       return { token, user };
     },
 
+    // We need to test this on the front end because we need the CONTEXT
     addQuote: async (parent, { quoteText, quoteAuthor }, context) => {
       console.log(quoteText, quoteAuthor)
       if(context.user) {
@@ -67,24 +68,59 @@ const resolvers = {
           return quote;
 
       }
-      // const token = signToken(user);
-      // return{token, user}
+      const token = signToken(user);
+      return{token, user}
+    },
 
-    }
+    removeQuote: async (parent, { quoteId }, context) => {
+      if (context.user) {
+        const quote = await Quote.findOneAndDelete({
+          _id: quoteId,
+          quotePoster: context.user._id
+        });
+
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { quotes: quote._id}}
+        )
+        return quote;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+
+    updateQuote: async (parent, { quoteId, quoteText, quoteAuthor }) => {
+      return Quote.findByIdAndUpdate(
+        quoteId,
+        { quoteText, quoteAuthor },
+        {new: true}
+      )
+    },
 
 
-    // When we build front end, figure out where we are getting the userName or User Id to follow.    
-    // addFollow: async (parent, { userName }, context) => {
-    //   const newFollowId = await User.findOne({ userName })
+    // When we build front end, figure out where we are getting the userName or User Id to follow. 
+    // Again, we need front end to test this because we need context   
+    addFollow: async (parent, { userName }, context) => {
+      const newFollow = await User.findOne({ userName })
 
-    //   if (context.user) {
-    //     return User.findOneAndUpdate(
-    //       { _id: context.user._id },
-    //       { $addToSet: {follows: newFollowId }},
-    //       { new: true }
-    //     )
-    //   }
-    // }
+      if (context.user) {
+        return User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: {follows: newFollow._id }},
+          { new: true }
+        )
+      }
+    },
+
+    removeFollow: async (parent, { userName }, context) => {
+      const newFollow = await User.findOne({ userName })
+
+      if (context.user) {
+        return User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: {follows: newFollow._id }},
+        )
+      }
+    },
   }
 };
 
