@@ -35,6 +35,10 @@ type Auth {
     addUser (userName: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addQuote(quoteText: String!, quoteAuthor: String!): Quote
+    addFollow(userName: String!): User
+    removeFollow(userName: String!): User
+    removeQuote(quoteId: ID!): Quote
+    updateQuote(quoteId: ID!, quoteText: String!, quoteAuthor: String!): Quote
   }
 
 `;
