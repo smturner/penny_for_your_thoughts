@@ -52,7 +52,26 @@ const resolvers = {
       return { token, user };
     },
 
-  
+    addQuote: async (parent, { quoteText, quoteAuthor }, context) => {
+      console.log(quoteText, quoteAuthor)
+      if(context.user) {
+        const quote = await Quote.create({ 
+          quoteText, 
+          quoteAuthor, 
+          quotePoster: context.user.userName,
+        });
+        await User.findOneAndUpdate(
+          {_id: context.user._id},
+          {$addToSet: { quotes: quote._id}}
+          )
+          return quote;
+
+      }
+      // const token = signToken(user);
+      // return{token, user}
+
+    }
+
 
     // When we build front end, figure out where we are getting the userName or User Id to follow.    
     // addFollow: async (parent, { userName }, context) => {
