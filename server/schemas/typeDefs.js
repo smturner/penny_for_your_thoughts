@@ -34,7 +34,7 @@ type Auth {
   type Mutation {
     addUser (userName: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addQuote(quoteText: String! quoteAuthor: String!): Quote
+    addQuote(quoteText: String!, quoteAuthor: String!): Quote
   }
 
 `;

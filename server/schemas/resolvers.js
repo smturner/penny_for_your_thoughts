@@ -52,13 +52,19 @@ const resolvers = {
       return { token, user };
     },
 
+    // addQuote: async (parent, { quoteText, quoteAuthor,  }) => {
+    //   const quote = await Quote.create({ quoteText, quoteAuthor });
+    //   // const token = signToken(user);
+    //   return { quote };
+    // },
+
     addQuote: async (parent, { quoteText, quoteAuthor }, context) => {
       console.log(quoteText, quoteAuthor)
       if(context.user) {
         const quote = await Quote.create({ 
           quoteText, 
           quoteAuthor, 
-          quotePoster: context.user.userName,
+          quotePoster: context.user._id,
         });
         await User.findOneAndUpdate(
           {_id: context.user._id},
@@ -67,8 +73,8 @@ const resolvers = {
           return quote;
 
       }
-      // const token = signToken(user);
-      // return{token, user}
+      const token = signToken(user);
+      return{token, user}
 
     }
 
