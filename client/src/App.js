@@ -9,6 +9,8 @@ import AppLogin from './AppLogin'
 import MainNav from './components/navbar/navbar';
 import Home from './Pages/Home'
 import CreateQuote from './Pages/createQuote'
+import UserQuotes from './Pages/userQuotes'
+import AllQuotes from './Pages/allQuotes';
 
 const client = new ApolloClient({
   uri: '/graphql',
@@ -22,8 +24,10 @@ function App() {
         <header className="App-header">
           <MainNav />
             {/* <Home /> */}
-          <AppLogin />
+          {/* <AppLogin /> */}
           {/* <CreateQuote /> */}
+          {/* <UserQuotes /> */}
+          <AllQuotes />
           {/* <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.

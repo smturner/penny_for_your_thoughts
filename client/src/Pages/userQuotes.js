@@ -1,9 +1,11 @@
 import React from 'react';
 
+import { Card, Form, Button} from 'react-bootstrap';
+
 const UserQuotes = () => {
     return (
         <div>
-            <Card>
+            <Card className= "text-dark">
                 <Card.Header>Quote</Card.Header>
                 <Card.Body>
                     <blockquote className="blockquote mb-0">
@@ -19,7 +21,7 @@ const UserQuotes = () => {
                 </Card.Body>
             </Card>
 
-            <Card>
+            <Card className= "text-dark">
                 <Card.Header>Quote</Card.Header>
                 <Card.Body>
                     <blockquote className="blockquote mb-0">
@@ -35,7 +37,7 @@ const UserQuotes = () => {
                 </Card.Body>
             </Card>
 
-            <Card>
+            <Card className= "text-dark">
                 <Card.Header>Quote</Card.Header>
                 <Card.Body>
                     <blockquote className="blockquote mb-0">
@@ -51,7 +53,7 @@ const UserQuotes = () => {
                 </Card.Body>
             </Card>
 
-            <Card>
+            <Card className= "text-dark">
                 <Card.Header>Quote</Card.Header>
                 <Card.Body>
                     <blockquote className="blockquote mb-0">

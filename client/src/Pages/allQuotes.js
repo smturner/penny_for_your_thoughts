@@ -1,10 +1,15 @@
 import React from 'react';
 
+import { Card, Button, InputGroup, FormControl } from 'react-bootstrap';
+
 const AllQuotes = () => {
     return (
         <div>
-            <Card>
-                <Card.Header>Quote</Card.Header>
+            
+
+            
+            <Card className="text-dark">
+                <Card.Header>User</Card.Header>
                 <Card.Body>
                     <blockquote className="blockquote mb-0">
                         <p>
@@ -15,11 +20,12 @@ const AllQuotes = () => {
                         <footer className="blockquote-footer">
                             Someone famous in <cite title="Source Title">Source Title</cite>
                         </footer>
+                        <Button variant="outline-info">Follow User</Button>{' '}
                     </blockquote>
                 </Card.Body>
             </Card>
-  
-            <Card>
+
+            <Card className="text-dark">
                 <Card.Header>Quote</Card.Header>
                 <Card.Body>
                     <blockquote className="blockquote mb-0">
@@ -31,11 +37,12 @@ const AllQuotes = () => {
                         <footer className="blockquote-footer">
                             Someone famous in <cite title="Source Title">Source Title</cite>
                         </footer>
+                        <Button variant="outline-info">Follow User</Button>{' '}
                     </blockquote>
                 </Card.Body>
             </Card>
-  
-            <Card>
+
+            <Card className="text-dark">
                 <Card.Header>Quote</Card.Header>
                 <Card.Body>
                     <blockquote className="blockquote mb-0">
@@ -47,11 +54,12 @@ const AllQuotes = () => {
                         <footer className="blockquote-footer">
                             Someone famous in <cite title="Source Title">Source Title</cite>
                         </footer>
+                        <Button variant="outline-info">Follow User</Button>{' '}
                     </blockquote>
                 </Card.Body>
             </Card>
-  
-            <Card>
+
+            <Card className="text-dark">
                 <Card.Header>Quote</Card.Header>
                 <Card.Body>
                     <blockquote className="blockquote mb-0">
@@ -63,12 +71,13 @@ const AllQuotes = () => {
                         <footer className="blockquote-footer">
                             Someone famous in <cite title="Source Title">Source Title</cite>
                         </footer>
+                        <Button variant="outline-info">Follow User</Button>{' '}
                     </blockquote>
                 </Card.Body>
             </Card>
         </div>
-  
+
     )
-  }
-  
-  export default AllQuotes;
+}
+
+export default AllQuotes;
