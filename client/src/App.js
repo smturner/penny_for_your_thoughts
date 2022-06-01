@@ -16,6 +16,9 @@ import LoginCard from './components/card/loginCard'
 // import AllQuotes from './Pages/allQuotes';
 import Login from './components/login/login.component'
 import SignUp from './components/login/signup.component'
+import CreateQuote from './Pages/createQuote'
+import UserQuotes from './Pages/userQuotes'
+import AllQuotes from './Pages/allQuotes';
 
 const client = new ApolloClient({
   uri: '/graphql',
@@ -28,6 +31,7 @@ function App() {
     <ApolloProvider client={client}>
 
       <div className="App">
+
         <Router>
           <header className="App-header">
 
@@ -55,6 +59,28 @@ function App() {
 
           </header>
         </Router>
+
+        <header className="App-header">
+          <MainNav />
+            {/* <Home /> */}
+          {/* <AppLogin /> */}
+          {/* <CreateQuote /> */}
+          {/* <UserQuotes /> */}
+          {/* <AllQuotes /> */}
+          {/* <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Edit <code>src/App.js</code> and save to reload.
+          </p>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >git 
+            Learn React
+          </a> */}
+        </header>
+
       </div>
 
     </ApolloProvider>

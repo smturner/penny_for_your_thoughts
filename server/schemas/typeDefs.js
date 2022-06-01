@@ -6,7 +6,8 @@ type User {
   userName:String
   email:String
   password:String
-  quotes:[Quote]!
+  quotes:[Quote]
+  follows:[User]
 }
 
 type Quote {
@@ -14,7 +15,7 @@ type Quote {
   quoteText:String
   quoteAuthor:String
   createdAt:String
-  quotePoster:String
+  quotePoster: String
 
 }
 
@@ -34,8 +35,15 @@ type Auth {
   type Mutation {
     addUser (userName: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+    addQuote(quoteText: String!, quoteAuthor: String!): User
+    addFollow(userName: String!): User
+    removeFollow(userName: String!): User
+    removeQuote(quoteId: ID!): Quote
+    updateQuote(quoteId: ID!, quoteText: String!, quoteAuthor: String!): Quote
   }
 
 `;
 
 module.exports = typeDefs;
+
+// addQuote(quoteText: String!, quoteAuthor: String!): Quote
