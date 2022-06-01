@@ -54,22 +54,22 @@ const resolvers = {
 
     // We need to test this on the front end because we need the CONTEXT
     addQuote: async (parent, { quoteText, quoteAuthor }, context) => {
-      console.log(quoteText, quoteAuthor)
       if(context.user) {
         const quote = await Quote.create({ 
           quoteText, 
           quoteAuthor, 
-          quotePoster: context.user.userName,
+          quotePoster: context.user._id,
         });
-        await User.findOneAndUpdate(
+        return await User.findOneAndUpdate(
           {_id: context.user._id},
-          {$addToSet: { quotes: quote._id}}
-          )
-          return quote;
+          {$addToSet: { quotes: quote._id}},
+          {new: true}
+          ).populate('quotes')
+          // return quote;
 
       }
-      const token = signToken(user);
-      return{token, user}
+      // const token = signToken(user);
+      // return user
     },
 
     removeQuote: async (parent, { quoteId }, context) => {

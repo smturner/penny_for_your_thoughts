@@ -6,7 +6,7 @@ type User {
   userName:String
   email:String
   password:String
-  quotes:[Quote]!
+  quotes:[Quote]
 }
 
 type Quote {
@@ -34,7 +34,7 @@ type Auth {
   type Mutation {
     addUser (userName: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addQuote(quoteText: String!, quoteAuthor: String!): Quote
+    addQuote(quoteText: String!, quoteAuthor: String!): User
     addFollow(userName: String!): User
     removeFollow(userName: String!): User
     removeQuote(quoteId: ID!): Quote
