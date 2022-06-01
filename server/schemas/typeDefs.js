@@ -7,6 +7,7 @@ type User {
   email:String
   password:String
   quotes:[Quote]
+  follows:[User]
 }
 
 type Quote {
