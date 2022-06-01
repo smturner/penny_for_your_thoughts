@@ -6,7 +6,7 @@ const { signToken } = require('../utils/auth')
 const resolvers = {
   Query: {
     users: async () => {
-      return await User.find({}).populate('quotes')
+      return await User.find({}).populate('quotes').populate('follows');
     },
 
     quotes: async (parent, { userName }) => {
@@ -30,6 +30,7 @@ const resolvers = {
   },
 
   Mutation: {
+    
     addUser: async (parent, { userName, email, password }) => {
       const user = await User.create({ userName, email, password });
       const token = signToken(user);
@@ -52,7 +53,7 @@ const resolvers = {
       return { token, user };
     },
 
-    // We need to test this on the front end because we need the CONTEXT
+    // TESTED - WORKS
     addQuote: async (parent, { quoteText, quoteAuthor }, context) => {
       if(context.user) {
         const quote = await Quote.create({ 
@@ -72,6 +73,7 @@ const resolvers = {
       // return user
     },
 
+    // TESTED - WORKS
     removeQuote: async (parent, { quoteId }, context) => {
       if (context.user) {
         const quote = await Quote.findOneAndDelete({
@@ -88,6 +90,7 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
 
+    // TESTED - WORKS
     updateQuote: async (parent, { quoteId, quoteText, quoteAuthor }) => {
       return Quote.findByIdAndUpdate(
         quoteId,
@@ -97,20 +100,20 @@ const resolvers = {
     },
 
 
-    // When we build front end, figure out where we are getting the userName or User Id to follow. 
-    // Again, we need front end to test this because we need context   
+    // TESTED - WORKING   
     addFollow: async (parent, { userName }, context) => {
       const newFollow = await User.findOne({ userName })
-
+      
       if (context.user) {
         return User.findOneAndUpdate(
           { _id: context.user._id },
           { $addToSet: {follows: newFollow._id }},
           { new: true }
-        )
+        ).populate('follows');
       }
     },
 
+    //TESTED - WORKS!
     removeFollow: async (parent, { userName }, context) => {
       const newFollow = await User.findOne({ userName })
 
@@ -118,7 +121,8 @@ const resolvers = {
         return User.findOneAndUpdate(
           { _id: context.user._id },
           { $pull: {follows: newFollow._id }},
-        )
+          { new: true}
+        ).populate('follows');
       }
     },
   }
