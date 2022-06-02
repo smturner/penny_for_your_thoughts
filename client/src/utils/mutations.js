@@ -27,13 +27,13 @@ mutation addUser($userName: String!, $email: String!, $password: String!) {
 export const ADD_QUOTE = gql`
 mutation addQuote($quoteText: String!, $quoteAuthor: String!) {
     addQuote(quoteText: $quoteText, quoteAuthor: $quoteAuthor) {
-      _id
+        _id
       userName
       quotes {
         _id
         quoteText
         quoteAuthor
-        createdAt
+        
         quotePoster
       }
     }
