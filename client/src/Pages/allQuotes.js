@@ -5,7 +5,7 @@ import { Card, Button, InputGroup, FormControl } from 'react-bootstrap';
 const AllQuotes = () => {
     return (
         <div>
-            
+
             <InputGroup className="mb-3">
                 <FormControl
                     placeholder="Search by User"
@@ -16,7 +16,7 @@ const AllQuotes = () => {
                     Get Quotes
                 </Button>
             </InputGroup>
-            
+
             <Card className="text-dark mb-3">
                 <Card.Header>User</Card.Header>
                 <Card.Body>
