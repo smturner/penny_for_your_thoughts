@@ -12,14 +12,16 @@ const CreateQuote = () => {
     const [quoteAuthor, setQuoteAuthor] = useState('');
     console.log(quoteText, quoteAuthor)
     const [addQuote, { error }] = useMutation(ADD_QUOTE)
-    // console.log(addQuote)
-
     // ,
-  
+ 
     // {
     //     update (cache, {data: { addQuote }}) {
     //         try{
-    //             const { quotes } = cache.readQuery({ query: QUERY_QUOTES });
+    //             const { quotes } = cache.readQuery({ query: QUERY_QUOTES, 
+    //             variables: {
+    //                 quoteText,
+    //                 quoteAuthor
+    //             }});
     //             // console.log({quotes})
 
     //             cache.writeQuery({

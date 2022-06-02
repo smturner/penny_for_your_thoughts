@@ -61,6 +61,7 @@ const resolvers = {
           quoteAuthor, 
           quotePoster: context.user._id,
         });
+
         return await User.findOneAndUpdate(
           {_id: context.user._id},
           {$addToSet: { quotes: quote._id}},
@@ -69,6 +70,7 @@ const resolvers = {
           // return quote;
 
       }
+      throw new AuthenticationError('You need to be logged in');
       // const token = signToken(user);
       // return user
     },

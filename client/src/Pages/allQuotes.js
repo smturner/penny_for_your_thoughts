@@ -18,7 +18,7 @@ const AllQuotes = () => {
                     Get Quotes
                 </Button>
             </InputGroup>
-            
+
             <Card className="text-dark mb-3">
                 <Card.Header>User</Card.Header>
                 <Card.Body>
