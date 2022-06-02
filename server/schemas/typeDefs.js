@@ -15,7 +15,7 @@ type Quote {
   quoteText:String
   quoteAuthor:String
   createdAt:String
-  quotePoster: String
+  quotePoster:User
 
 }
 

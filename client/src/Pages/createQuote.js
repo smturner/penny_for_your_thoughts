@@ -12,7 +12,7 @@ const CreateQuote = () => {
     const [quoteAuthor, setQuoteAuthor] = useState('');
     console.log(quoteText, quoteAuthor)
     const [addQuote, { error }] = useMutation(ADD_QUOTE)
-  
+
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
