@@ -1,11 +1,15 @@
 import React from 'react';
 
 import {Card, CardGroup,ListGroup} from 'react-bootstrap'
-
+import MainNav from '../components/navbar/navbar';
 
 const Home = () => {
     return (
+      
+
         <div>
+            <MainNav />
+
             <CardGroup className="text-dark">
   <Card >
     <Card.Body>

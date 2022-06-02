@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 //need these imports to connect apolloClient to front end
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 // import AppLogin from './AppLogin'
-import MainNav from './components/navbar/navbar';
+// import MainNav from './components/navbar/navbar';
 import Home from './Pages/Home'
 import LoginCard from './components/card/loginCard'
 
@@ -33,7 +33,7 @@ function App() {
         <Router>
           <header className="App-header">
 
-            <MainNav />
+          {/* <MainNav /> */}
             <Routes>
               <Route
               path= "/"
@@ -45,14 +45,14 @@ function App() {
               <Route path="/sign-in" element={<Login />} />
               <Route path="/sign-up" element={<SignUp />} />
             </Routes>
-
+            
             <Routes>
               <Route
                 path="/home"
                 element={<Home />}
               />
             </Routes>
-
+            
             <Routes>
               <Route
               path="/create"

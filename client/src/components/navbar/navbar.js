@@ -14,6 +14,7 @@ const MainNav = () => {
         <Nav.Link href="/create">Create Quotes</Nav.Link>
         <Nav.Link href="/viewAll">View Quotes</Nav.Link>
         <Nav.Link href="/user">Your Quotes</Nav.Link>
+        <Nav.Link href="/home">Homepage</Nav.Link>
         
 
         {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">

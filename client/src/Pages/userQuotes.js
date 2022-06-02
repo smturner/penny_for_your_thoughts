@@ -1,10 +1,12 @@
 import React from 'react';
 
 import { Card, Form, Button} from 'react-bootstrap';
+import MainNav from '../components/navbar/navbar';
 
 const UserQuotes = () => {
     return (
         <div>
+            <MainNav />
             <Card className= "text-dark mb-3">
                 <Card.Header>Quote</Card.Header>
                 <Card.Body>

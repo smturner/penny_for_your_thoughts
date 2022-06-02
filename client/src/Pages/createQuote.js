@@ -4,6 +4,8 @@ import { ADD_QUOTE } from '../utils/mutations';
 import { QUERY_QUOTES, QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
 import { Card, Form, Button} from 'react-bootstrap';
+import MainNav from '../components/navbar/navbar';
+
 
 const CreateQuote = () => {
     const [quoteText, setQuoteText] = useState('');
@@ -67,6 +69,8 @@ const CreateQuote = () => {
 
     return (
         <>
+                    <MainNav />
+
             <Card className= "text-dark">
                 <Card.Header>Penny For Your Thoughts</Card.Header>
                 {/* {Auth.loggedIn() ? ( */}
