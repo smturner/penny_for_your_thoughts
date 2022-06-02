@@ -1,16 +1,17 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import QuoteList from '../components/QuoteList';
-import { QUERY_QUOTES } from '../utils/queries';
+import { QUERY_QUOTES,QUERY_USERS } from '../utils/queries';
 import { QUERY_ME, QUERY_SINGLE_USER } from '../utils/queries'
 import { Card, Form, InputGroup, FormControl, Button} from 'react-bootstrap';
 import MainNav from '../components/navbar/navbar';
 
 const AllQuotes = () => {
-    const { loading, data } = useQuery(QUERY_QUOTES);
-    const quotes= data?.quotes || [];
-    
-    console.log(quotes)
+    const { loading, data } = useQuery(QUERY_USERS);
+    const quotes= data?.users.quotes || [];
+    // const username = data?.users.userName
+console.log(data)    
+
 
     return (
         <div>

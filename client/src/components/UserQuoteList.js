@@ -1,8 +1,9 @@
 import React from 'react';
 import { Card, Form, Button } from 'react-bootstrap';
 
-const Quote = ({
+const UserQuoteList = ({
     quotes,
+    username,
     title,
     showTitle = true,
 }) => {
@@ -16,7 +17,7 @@ const Quote = ({
         {showTitle && <h3>{title}</h3>}
         {quotes && quotes.map((quote) => (
             <Card className="text-dark mb-3">
-                <Card.Header>Posted by1: {quote.quotePoster}</Card.Header>
+                <Card.Header>Posted by1: {username}</Card.Header>
                 <Card.Body>
                     <blockquote className="blockquote mb-0">
                         <p>
@@ -38,4 +39,4 @@ const Quote = ({
     )
 }
 
-export default Quote
+export default UserQuoteList
