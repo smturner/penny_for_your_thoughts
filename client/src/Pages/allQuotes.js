@@ -1,10 +1,18 @@
 import React from 'react';
-
-import { Card, Button, InputGroup, FormControl } from 'react-bootstrap';
+import { useQuery } from '@apollo/client';
+import QuoteList from '../components/QuoteList';
+import { QUERY_QUOTES,QUERY_USERS } from '../utils/queries';
+import { QUERY_ME, QUERY_SINGLE_USER } from '../utils/queries'
+import { Card, Form, InputGroup, FormControl, Button} from 'react-bootstrap';
 import MainNav from '../components/navbar/navbar';
 
-
 const AllQuotes = () => {
+    const { loading, data } = useQuery(QUERY_USERS);
+    const quotes= data?.users.quotes || [];
+    // const username = data?.users.userName
+console.log(data)    
+
+
     return (
         <div>
             <MainNav />
@@ -19,39 +27,23 @@ const AllQuotes = () => {
                 </Button>
             </InputGroup>
 
-            <Card className="text-dark mb-3">
-                <Card.Header>User</Card.Header>
-                <Card.Body>
-                    <blockquote className="blockquote mb-0">
-                        <p>
-                            {' '}
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
-                            erat a ante.{' '}
-                        </p>
-                        <footer className="blockquote-footer">
-                            Someone famous in <cite title="Source Title">Source Title</cite>
-                        </footer>
-                        <Button variant="outline-info">Follow User</Button>{' '}
-                    </blockquote>
-                </Card.Body>
-            </Card>
+        
+           
+            <div className="col-12 mb-3">
+                {loading ? (
+                    <div>Loading...</div>
+                ): (
+                    <QuoteList
+                    quotes={quotes}
+                    title="All Quotes"
+                     />
 
-            <Card className="text-dark mb-3">
-                <Card.Header>User</Card.Header>
-                <Card.Body>
-                    <blockquote className="blockquote mb-0">
-                        <p>
-                            {' '}
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
-                            erat a ante.{' '}
-                        </p>
-                        <footer className="blockquote-footer">
-                            Someone famous in <cite title="Source Title">Source Title</cite>
-                        </footer>
-                        <Button variant="outline-info">Follow User</Button>{' '}
-                    </blockquote>
-                </Card.Body>
-            </Card>
+                )}
+               
+            </div>
+
+          
+
 
         </div>
 
