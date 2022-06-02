@@ -7,7 +7,7 @@ const Quote = ({
     showTitle = true,
 }) => {
     if (!quotes.length) {
-        return <h3>You have not created quotes yet</h3>
+        return <h3>No Quotes to Show</h3>
     }
 
 
@@ -16,16 +16,18 @@ const Quote = ({
         {showTitle && <h3>{title}</h3>}
         {quotes && quotes.map((quote) => (
             <Card className="text-dark mb-3">
-                <Card.Header>Posted by: {quote.quotePoster}</Card.Header>
+                <Card.Header>Posted by1: {quote.quotePoster}</Card.Header>
                 <Card.Body>
                     <blockquote className="blockquote mb-0">
                         <p>
                             '{quote.quoteText}'
-                         
+                       
                         </p>
                         <footer className="blockquote-footer">
-                        {quote.quoteAuthor}</footer>
-                        
+                         
+                        </footer>
+                        <Button variant="outline-secondary">Edit</Button>{' '}
+                        <Button variant="outline-danger">Delete</Button>{' '}
                     </blockquote>
                 </Card.Body>
             </Card>
