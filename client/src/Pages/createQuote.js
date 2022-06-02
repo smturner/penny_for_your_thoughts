@@ -27,9 +27,9 @@ const CreateQuote = () => {
     //                 data: { quotes: [addQuote, ...quotes]}
     //             });
             
-            } catch (e) {
-                console.error(e)
-            }
+            // } catch (e) {
+            //     console.error(e)
+            // }
 
             const { me } = cache.readQuery({ query: QUERY_ME });
             cache.writeQuery({
