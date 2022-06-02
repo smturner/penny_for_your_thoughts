@@ -5,6 +5,8 @@ import MainNav from '../components/navbar/navbar';
 
 const UserQuotes = () => {
     return (
+
+        
         <div>
             <MainNav />
             <Card className= "text-dark mb-3">
