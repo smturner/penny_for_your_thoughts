@@ -11,7 +11,7 @@ const resolvers = {
 
     quotes: async (parent, { userName }) => {
       const params = userName ? { userName } : {};
-      return await Quote.find(params)
+      return await Quote.find(params);
     },
 
     quote: async (parent, { quoteId }) => {
