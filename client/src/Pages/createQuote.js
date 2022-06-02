@@ -29,17 +29,17 @@ const CreateQuote = () => {
     //                 data: { quotes: [addQuote, ...quotes]}
     //             });
             
-    //         } catch (e) {
-    //             console.error(e)
-    //         }
+            // } catch (e) {
+            //     console.error(e)
+            // }
 
-    //         const { me } = cache.readQuery({ query: QUERY_ME });
-    //         cache.writeQuery({
-    //             query: QUERY_ME,
-    //             data: { me: { ...me, quotes: [ ...me.quotes, addQuote]}}
-    //         })
-    //     }
-    // });
+            const { me } = cache.readQuery({ query: QUERY_ME });
+            cache.writeQuery({
+                query: QUERY_ME,
+                data: { me: { ...me, quotes: [ ...me.quotes, addQuote]}}
+            })
+        }
+    });
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
