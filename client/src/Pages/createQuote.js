@@ -9,33 +9,29 @@ const CreateQuote = () => {
     const [quoteText, setQuoteText] = useState('');
     const [quoteAuthor, setQuoteAuthor] = useState('');
     console.log(quoteText, quoteAuthor)
-    const [addQuote, { error }] = useMutation(ADD_QUOTE)
-    // console.log(addQuote)
+    const [addQuote, { error }] = useMutation(ADD_QUOTE,
+    {
+        update (cache, {data: { addQuote }}) {
+            try{
+                const { quotes } = cache.readQuery({ query: QUERY_QUOTES });
+                // console.log({quotes})
 
-    // ,
-  
-    // {
-    //     update (cache, {data: { addQuote }}) {
-    //         try{
-    //             const { quotes } = cache.readQuery({ query: QUERY_QUOTES });
-    //             // console.log({quotes})
-
-    //             cache.writeQuery({
-    //                 query: QUERY_QUOTES,
-    //                 data: { quotes: [addQuote, ...quotes]}
-    //             });
+                cache.writeQuery({
+                    query: QUERY_QUOTES,
+                    data: { quotes: [addQuote, ...quotes]}
+                });
             
-    //         } catch (e) {
-    //             console.error(e)
-    //         }
+            } catch (e) {
+                console.error(e)
+            }
 
-    //         const { me } = cache.readQuery({ query: QUERY_ME });
-    //         cache.writeQuery({
-    //             query: QUERY_ME,
-    //             data: { me: { ...me, quotes: [ ...me.quotes, addQuote]}}
-    //         })
-    //     }
-    // });
+            const { me } = cache.readQuery({ query: QUERY_ME });
+            cache.writeQuery({
+                query: QUERY_ME,
+                data: { me: { ...me, quotes: [ ...me.quotes, addQuote]}}
+            })
+        }
+    });
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
