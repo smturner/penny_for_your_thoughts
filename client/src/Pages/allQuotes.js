@@ -9,8 +9,9 @@ import MainNav from '../components/navbar/navbar';
 const AllQuotes = () => {
     const { loading, data } = useQuery(QUERY_USERS);
     const quotes= data?.users.quotes || [];
-    // const username = data?.users.userName
-console.log(data)    
+    const username = data?.users
+console.log(data)
+console.log(username)    
 
 
     return (
