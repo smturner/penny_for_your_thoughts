@@ -52,7 +52,7 @@ function App() {
         <Router>
           <header className="App-header">
 
-            <MainNav />
+          {/* <MainNav /> */}
             <Routes>
               <Route
               path= "/"
@@ -64,14 +64,14 @@ function App() {
               <Route path="/sign-in" element={<Login />} />
               <Route path="/sign-up" element={<SignUp />} />
             </Routes>
-
+            
             <Routes>
               <Route
                 path="/home"
                 element={<Home />}
               />
             </Routes>
-
+            
             <Routes>
               <Route
               path="/create"

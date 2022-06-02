@@ -1,11 +1,13 @@
 import React from 'react';
 
 import { Card, Button, InputGroup, FormControl } from 'react-bootstrap';
+import MainNav from '../components/navbar/navbar';
+
 
 const AllQuotes = () => {
     return (
         <div>
-
+            <MainNav />
             <InputGroup className="mb-3">
                 <FormControl
                     placeholder="Search by User"
