@@ -15,7 +15,7 @@ import LoginCard from './components/card/loginCard'
 
 import Login from './components/login/login.component'
 import SignUp from './components/login/signup.component'
-import CreateQuote from './Pages/createQuote'
+import CreateQuote from './Pages/CreateQuote'
 import UserQuotes from './Pages/userQuotes'
 import AllQuotes from './Pages/allQuotes';
 
