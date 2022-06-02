@@ -33,7 +33,7 @@ mutation addQuote($quoteText: String!, $quoteAuthor: String!) {
         _id
         quoteText
         quoteAuthor
-        
+        createdAt
         quotePoster
       }
     }
