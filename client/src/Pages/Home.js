@@ -2,6 +2,8 @@ import React from 'react';
 
 import {Card, CardGroup,ListGroup} from 'react-bootstrap'
 import MainNav from '../components/navbar/navbar';
+import UserQuotes from '../Pages/userQuotes';
+import UserQuoteList from '../components/UserQuoteList'
 
 const Home = () => {
     return (
@@ -28,6 +30,9 @@ const Home = () => {
   <Card>
   <Card.Header>My Quotes</Card.Header>
   <Card.Body>
+    {/* <UserQuotes>
+      <UserQuoteList   />
+    </UserQuotes> */}
     <blockquote className="blockquote mb-0">
       <p>
         {' '}

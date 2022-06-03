@@ -30,7 +30,6 @@ type Auth {
     user(userId: ID!):  User
     quote(quoteId: ID!): Quote
     me: User
-    allQuotes:[Quote]
   }
 
   type Mutation {

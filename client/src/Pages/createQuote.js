@@ -5,7 +5,7 @@ import { QUERY_QUOTES, QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
 import { Card, Form, Button} from 'react-bootstrap';
 import MainNav from '../components/navbar/navbar';
-
+// import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 
 const CreateQuote = () => {
     const [quoteText, setQuoteText] = useState('');
@@ -19,7 +19,7 @@ const CreateQuote = () => {
 
         try{
             const { data } = await addQuote({
-                variables: { quoteText, quoteAuthor, quotePoster: Auth.getProfile().data.userName},
+                variables: { quoteText, quoteAuthor, quotePoster: Auth.getProfile().date._id},
             });
             console.log(data)
 
@@ -44,7 +44,7 @@ const CreateQuote = () => {
 
     return (
         <>
-                    <MainNav />
+                    {/* <MainNav /> */}
 
             <Card className= "text-dark">
                 <Card.Header>Penny For Your Thoughts</Card.Header>

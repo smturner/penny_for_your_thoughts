@@ -1,37 +1,67 @@
-import React from 'react';
+import React, {useState} from 'react';
+import Auth from '../../utils/auth';
+import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap'
+import CreateQuote from "../../Pages/createQuote"
+  
+  const MainNav = () => {
+    const [showModal, setShowModal] = useState(false);
 
-import { Navbar, Nav, Container } from 'react-bootstrap'
-
-const MainNav = () => {
     return (
-        <header>
-            <Navbar fixed="top" bg="light" expand="lg">
-  <Container>
-    <Navbar.Brand href="/">Penny For Your Thoughts</Navbar.Brand>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-    <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="me-auto">
-        <Nav.Link href="/create">Create Quotes</Nav.Link>
+      <>
+        <Navbar fixed="top"  bg="light" expand="lg">
+          <Container>
+            <Navbar.Brand href="/">Penny For Your Thoughts</Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="me-auto">
+                {/* 
         <Nav.Link href="/viewAll">View Quotes</Nav.Link>
         <Nav.Link href="/user">Your Quotes</Nav.Link>
-        <Nav.Link href="/home">Homepage</Nav.Link>
-        
+        <Nav.Link href="/home">Homepage</Nav.Link> */}
+                {Auth.loggedIn() ? (
+                  <>
+                    <Nav.Link href="/home">Homepage</Nav.Link>
+                    <Nav.Link href="/viewAll">View Quotes</Nav.Link>
+                    <Nav.Link href="/user">Your Quotes</Nav.Link>
+                    {/* <Nav.Link href="/create">Create Quotes</Nav.Link> */}
+                    <Nav.Link onClick={() => setShowModal(true)}>Create Quotes</Nav.Link>
+
+                    <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
+                  </>
+                ) : (
+                  <Nav.Link href="/">Login</Nav.Link>
+                )}
 
 
-              {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-          <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-          <NavDropdown.Divider />
-          <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-        </NavDropdown> */}
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
+        <Modal
+          size='lg'
+          show={showModal}
+          onHide={() => setShowModal(false)}
+          aria-labelledby='signup-modal'>
+          <Tab.Container defaultActiveKey='createQuote'>
+            <Modal.Header closeButton>
+              <Modal.Title id='signup-modal'>
+                <Nav variant='pills'>
+               
+                </Nav>
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              {/* <Tab.Content> */}
+                {/* <Tab.Pane eventKey='createQuote'> */}
+                  <CreateQuote handleModalClose={() => setShowModal(false)} />
+                {/* </Tab.Pane> */}
+             
+              {/* </Tab.Content> */}
+            </Modal.Body>
+          </Tab.Container>
+        </Modal>
+      </>
+    );
+  };
 
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </header>
-  );
-};
-
-export default MainNav;
+  export default MainNav;

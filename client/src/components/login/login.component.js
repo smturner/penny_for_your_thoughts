@@ -74,9 +74,7 @@ function Login(props) {
             Submit
           </button>
         </div>
-        <p className="forgot-password text-right">
-          Forgot <a href="#">password?</a>
-        </p>
+       
       </form>
     );
 };

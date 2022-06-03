@@ -7,12 +7,12 @@ import { Card, Form, InputGroup, FormControl, Button} from 'react-bootstrap';
 import MainNav from '../components/navbar/navbar';
 
 const AllQuotes = () => {
-    const { loading, data } = useQuery(QUERY_USERS);
-    const quotes= data?.users.quotes || [];
-    const username = data?.users
-console.log(data)
-console.log(username)    
-
+    const { loading, data } = useQuery(QUERY_QUOTES);
+    const quotes= data?.quotes || [];
+console.log(quotes)
+// const { loading, data } = useQuery(QUERY_USERS)
+// const users=data?.users || []
+// console.log(users)
 
     return (
         <div>
@@ -35,6 +35,8 @@ console.log(username)
                     <div>Loading...</div>
                 ): (
                     <QuoteList
+                    
+                    // users={users}
                     quotes={quotes}
                     title="All Quotes"
                      />
