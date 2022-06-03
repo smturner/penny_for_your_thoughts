@@ -60,13 +60,15 @@ const resolvers = {
 
     // TESTED - WORKS
     addQuote: async (parent, { quoteText, quoteAuthor }, context) => {
+      console.log("Context.user: ", context.user);
       if(context.user) {
         const quote = await Quote.create({ 
           quoteText, 
           quoteAuthor, 
           quotePoster: context.user._id,
-        });
+        })
 
+        console.log("Quote ID: ", quote._id);
         return await User.findOneAndUpdate(
           {_id: context.user._id},
           {$addToSet: { quotes: quote._id}},
