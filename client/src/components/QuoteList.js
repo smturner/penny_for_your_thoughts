@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Form, Button } from 'react-bootstrap';
-
+import LikeButton from './LikeButton'
 const Quote = ({
     quotes,
     title,
@@ -26,9 +26,10 @@ const Quote = ({
                         </p>
                         <footer className="blockquote-footer">
                         {quotes.quoteAuthor}</footer>
-                        
                     </blockquote>
                 </Card.Body>
+                <LikeButton />
+
             </Card>
         ))}
             
