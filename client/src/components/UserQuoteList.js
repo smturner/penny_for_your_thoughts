@@ -70,9 +70,9 @@ const [deleteQuote, { error }] = useMutation(DELETE_QUOTE);
                         <footer className="blockquote-footer">
                          {quote.quoteAuthor}
                         </footer>
-                        <Link to= {{ pathname: `create/edit/${quote._id}`}}
-                        className="outline-secondary">Edit</Link>
-                           {/* <Button variant="outline-secondary" onClick={() => setShowModal(true)}> Edit</Button> */}
+                        {/* <Link to= {{ pathname: `create/edit/${quote._id}`}}
+                        className="outline-secondary">Edit</Link> */}
+                           <Button variant="outline-secondary" onClick={() => setShowModal(true)}> Edit</Button>
                         {/* <Button variant="outline-secondary">Edit</Button>{' '} */}
                         <Button onClick= {() => handleDelete(quote._id)} variant="outline-danger">Delete</Button>
 
