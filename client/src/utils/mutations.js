@@ -34,3 +34,26 @@ mutation addQuote($quoteText: String!, $quoteAuthor: String!) {
     }
   }
 }`;
+
+export const UPDATE_QUOTE = gql`
+mutation updateQuote($quoteId: ID!, $quoteText: String!, $quoteAuthor: String!) {
+  updateQuote(quoteId: $quoteId, quoteText: $quoteText, quoteAuthor: $quoteAuthor) {
+    _id
+    quoteText
+    quoteAuthor
+    createdAt
+    quotePoster {
+      userName
+    }
+  }
+}
+`
+
+export const DELETE_QUOTE = gql`
+mutation RemoveQuote($quoteId: ID!) {
+  removeQuote(quoteId: $quoteId) {
+    _id
+  }
+}`
+
+

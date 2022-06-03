@@ -88,11 +88,13 @@ const resolvers = {
         const quote = await Quote.findOneAndDelete({
           _id: quoteId,
           quotePoster: context.user._id
-        });
+        },
+        {new:true}
+        );
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { quotes: quote._id}}
+          { $pull: { quotes: quoteId}}
         )
         return quote;
       }
