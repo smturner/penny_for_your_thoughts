@@ -10,22 +10,21 @@ import MainNav from '../components/navbar/navbar';
 const CreateQuote = () => {
     const [quoteText, setQuoteText] = useState('');
     const [quoteAuthor, setQuoteAuthor] = useState('');
-    console.log(quoteText, quoteAuthor)
-    const [addQuote, { error }] = useMutation(ADD_QUOTE)
-
+    const [addQuote, { error }] = useMutation(ADD_QUOTE);
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-
+        // console.log("EVENT TRIGGERED") worked
         try{
             const { data } = await addQuote({
-                variables: { quoteText, quoteAuthor, quotePoster: Auth.getProfile().date._id},
+                variables: {
+                    quoteText,
+                    quoteAuthor }
             });
-            console.log(data)
 
             setQuoteText ('')
             setQuoteAuthor ('')
-        }catch (err) {
+        } catch (err) {
             console.error(err);
         }
         
@@ -34,10 +33,10 @@ const CreateQuote = () => {
     const handleChange = (event) => {
         const { name, value} =event.target;
 
-        if(name=== 'quoteText') {
+        if(name === 'quoteText') {
             setQuoteText(value);
         }
-        if(name=== 'quoteAuthor'){
+        if(name === 'quoteAuthor'){
             setQuoteAuthor(value);
         }
     }
