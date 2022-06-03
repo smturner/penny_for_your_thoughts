@@ -5,7 +5,7 @@ import { QUERY_ME } from '../utils/queries';
 import { DELETE_QUOTE } from '../utils/mutations';
 import { Route,Link } from 'react-router-dom'
 import EditPost from "../components/EditPost"
-import CreateQuote from '../Pages/createQuote';
+// import CreateQuote from '../Pages/createQuote';
 import Auth from '../utils/auth';
 // import userQuotes from '../pages/userQuotes'
 
@@ -76,7 +76,6 @@ const [deleteQuote, { error }] = useMutation(DELETE_QUOTE);
                         {/* <Button variant="outline-secondary">Edit</Button>{' '} */}
                         <Button onClick= {() => handleDelete(quote._id)} variant="outline-danger">Delete</Button>
 
-{/* <p onClick={() => userQuotes(quote.id)}> 🗑️</p> */}
                     </blockquote>
                 </Card.Body>
             </Card>

@@ -9,8 +9,8 @@ import { Route,Link } from 'react-router-dom'
 
 // import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 
-const CreateQuote = () => {
-    const [showModal, setShowModal] = useState(false);
+const CreateQuote = ({setShowModal}) => {
+    // const [showModal, setShowModal] = useState(false);
 
     const [quoteText, setQuoteText] = useState('');
     const [quoteAuthor, setQuoteAuthor] = useState('');
@@ -77,7 +77,7 @@ const CreateQuote = () => {
                             type="text" placeholder="Please enter the Author" />
                         </Form.Group>
                         
-                        <Button variant="primary" type="submit">
+                        <Button  variant="primary" type="submit">
                             Submit
                         </Button>
                             {/* <Link to='/home'  variant="primary" type="submit">
