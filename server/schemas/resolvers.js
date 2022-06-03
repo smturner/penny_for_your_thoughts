@@ -60,13 +60,15 @@ const resolvers = {
 
     // TESTED - WORKS
     addQuote: async (parent, { quoteText, quoteAuthor }, context) => {
+      console.log("Context.user: ", context.user);
       if(context.user) {
         const quote = await Quote.create({ 
           quoteText, 
           quoteAuthor, 
           quotePoster: context.user._id,
-        });
+        })
 
+        console.log("Quote ID: ", quote._id);
         return await User.findOneAndUpdate(
           {_id: context.user._id},
           {$addToSet: { quotes: quote._id}},
@@ -86,11 +88,13 @@ const resolvers = {
         const quote = await Quote.findOneAndDelete({
           _id: quoteId,
           quotePoster: context.user._id
-        });
+        },
+        {new:true}
+        );
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { quotes: quote._id}}
+          { $pull: { quotes: quoteId}}
         )
         return quote;
       }

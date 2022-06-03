@@ -27,17 +27,33 @@ mutation addUser($userName: String!, $email: String!, $password: String!) {
 export const ADD_QUOTE = gql`
 mutation addQuote($quoteText: String!, $quoteAuthor: String!) {
   addQuote(quoteText: $quoteText, quoteAuthor: $quoteAuthor) {
-    _id
-    userName
-    email
-    quotes {
-      _id
-      quoteText
-      quoteAuthor
-      createdAt
-      quotePoster {
-        userName
-      }
+    quoteText
+    quoteAuthor
+    quotePoster {
+      userName
     }
   }
 }`;
+
+export const UPDATE_QUOTE = gql`
+mutation updateQuote($quoteId: ID!, $quoteText: String!, $quoteAuthor: String!) {
+  updateQuote(quoteId: $quoteId, quoteText: $quoteText, quoteAuthor: $quoteAuthor) {
+    _id
+    quoteText
+    quoteAuthor
+    createdAt
+    quotePoster {
+      userName
+    }
+  }
+}
+`
+
+export const DELETE_QUOTE = gql`
+mutation RemoveQuote($quoteId: ID!) {
+  removeQuote(quoteId: $quoteId) {
+    _id
+  }
+}`
+
+
