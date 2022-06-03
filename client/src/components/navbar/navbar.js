@@ -53,7 +53,7 @@ import CreateQuote from "../../Pages/createQuote"
             <Modal.Body>
               {/* <Tab.Content> */}
                 {/* <Tab.Pane eventKey='createQuote'> */}
-                  <CreateQuote handleModalClose={() => setShowModal(false)} />
+                  <CreateQuote  handleModalClose={() => setShowModal(false)}  />
                 {/* </Tab.Pane> */}
              
               {/* </Tab.Content> */}
