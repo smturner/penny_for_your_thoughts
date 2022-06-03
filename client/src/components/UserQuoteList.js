@@ -5,7 +5,7 @@ import { QUERY_ME } from '../utils/queries';
 import { DELETE_QUOTE } from '../utils/mutations';
 import { Route,Link } from 'react-router-dom'
 import EditPost from "../components/EditPost"
-import CreateQuote from '../Pages/createQuote';
+// import CreateQuote from '../Pages/createQuote';
 import Auth from '../utils/auth';
 // import userQuotes from '../pages/userQuotes'
 
@@ -61,7 +61,7 @@ const [deleteQuote, { error }] = useMutation(DELETE_QUOTE);
         {<h1>{title}</h1>}
         {quotes && quotes.map((quote) => (
             <Card className="text-dark mb-3">
-                <Card.Header>Posted by: {username}</Card.Header>
+                <Card.Header>Posted by: {username} on {quote.createdAt}</Card.Header>
                 <Card.Body>
                     <blockquote className="blockquote mb-0">
                         <p>
@@ -70,13 +70,12 @@ const [deleteQuote, { error }] = useMutation(DELETE_QUOTE);
                         <footer className="blockquote-footer">
                          {quote.quoteAuthor}
                         </footer>
-                        <Link to= {{ pathname: `create/edit/${quote._id}`}}
-                        className="outline-secondary">Edit</Link>
-                           {/* <Button variant="outline-secondary" onClick={() => setShowModal(true)}> Edit</Button> */}
+                        {/* <Link to= {{ pathname: `create/edit/${quote._id}`}}
+                        className="outline-secondary">Edit</Link> */}
+                           <Button variant="outline-secondary" onClick={() => setShowModal(true)}> Edit</Button>
                         {/* <Button variant="outline-secondary">Edit</Button>{' '} */}
                         <Button onClick= {() => handleDelete(quote._id)} variant="outline-danger">Delete</Button>
 
-{/* <p onClick={() => userQuotes(quote.id)}> 🗑️</p> */}
                     </blockquote>
                 </Card.Body>
             </Card>

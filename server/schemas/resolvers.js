@@ -12,7 +12,7 @@ const resolvers = {
     quotes: async () => {
       // const params = (userName===false) ? { userName } : {};
       // console.log(userName)
-      return await Quote.find().populate('quotePoster');
+      return await Quote.find().sort({ createdAt: -1 }).populate('quotePoster');
     },
 
     quote: async (parent, { quoteId }) => {
@@ -25,7 +25,7 @@ const resolvers = {
 
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate('quotes')
+        return User.findOne({ _id: context.user._id }).sort({ createdAt: -1 }).populate('quotes')
       }
     },
 

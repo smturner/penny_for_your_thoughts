@@ -17,7 +17,7 @@ const Quote = ({
         {showTitle && <h3>{title}</h3>}
         {quotes && quotes.map((quotes) => (
             <Card className="text-dark mb-3">
-                <Card.Header>Posted by: {quotes.quotePoster.userName}</Card.Header>
+                <Card.Header>Posted by~ {quotes.quotePoster.userName} on {quotes.createdAt}</Card.Header>
                 <Card.Body>
                     <blockquote className="blockquote mb-0">
                         <p>
