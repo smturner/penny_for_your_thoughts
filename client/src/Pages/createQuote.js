@@ -5,9 +5,13 @@ import { QUERY_QUOTES, QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
 import { Card, Form, Button} from 'react-bootstrap';
 import MainNav from '../components/navbar/navbar';
+import { Route,Link } from 'react-router-dom'
+
 // import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 
 const CreateQuote = () => {
+    const [showModal, setShowModal] = useState(false);
+
     const [quoteText, setQuoteText] = useState('');
     const [quoteAuthor, setQuoteAuthor] = useState('');
     const [addQuote, { error }] = useMutation(ADD_QUOTE);
@@ -76,6 +80,9 @@ const CreateQuote = () => {
                         <Button variant="primary" type="submit">
                             Submit
                         </Button>
+                            {/* <Link to='/home'  variant="primary" type="submit">
+                            Submit
+                        </Link> */}
                     </Form>
                    
                 </Card.Body>
