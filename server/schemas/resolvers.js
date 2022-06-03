@@ -9,9 +9,10 @@ const resolvers = {
       return await User.find({}).populate('quotes').populate('follows')
     },
 
-    quotes: async (parent, { userName }) => {
-      const params = userName ? { userName } : {};
-      return await Quote.find(params);
+    quotes: async () => {
+      // const params = (userName===false) ? { userName } : {};
+      // console.log(userName)
+      return await Quote.find().populate('quotePoster');
     },
 
     quote: async (parent, { quoteId }) => {
@@ -28,9 +29,9 @@ const resolvers = {
       }
     },
 
-    allQuotes: async () => {
-      return Quote.find({}).populate('quotePoster');
-    }
+    // allQuotes: async () => {
+    //   return Quote.find({}).populate('quotePoster');
+    // }
   },
 
   Mutation: {

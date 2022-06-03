@@ -22,9 +22,9 @@ const quoteSchema = new Schema({
 
     //connect the quote to who posted it.
     quotePoster: {
-        type: String,
+        type: Schema.Types.ObjectId,
         required: true,
-        // ref: 'User'
+        ref: 'User'
     },
 
 })
