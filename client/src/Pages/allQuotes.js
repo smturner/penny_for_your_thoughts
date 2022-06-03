@@ -8,10 +8,10 @@ import MainNav from '../components/navbar/navbar';
 
 const AllQuotes = () => {
     const { loading, data } = useQuery(QUERY_USERS);
-    const quotes= data?.users.quotes || [];
-    const username = data?.users
-console.log(data)
-console.log(username)    
+    const users= data?.users || [];
+    // const username = data?.users.userName
+console.log(users)
+// console.log(username)    
 
 
     return (
@@ -35,7 +35,7 @@ console.log(username)
                     <div>Loading...</div>
                 ): (
                     <QuoteList
-                    quotes={quotes}
+                    users={users}
                     title="All Quotes"
                      />
 

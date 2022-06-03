@@ -5,7 +5,7 @@ const UserQuoteList = ({
     quotes,
     username,
     title,
-    showTitle = true,
+    
 }) => {
     if (!quotes.length) {
         return <h3>No Quotes to Show</h3>
@@ -14,18 +14,20 @@ const UserQuoteList = ({
 
     return (
         <>
-        {showTitle && <h3>{title}</h3>}
+        <br/>
+        <br/>
+        <br/>
+        {<h1>{title}</h1>}
         {quotes && quotes.map((quote) => (
             <Card className="text-dark mb-3">
-                <Card.Header>Posted by1: {username}</Card.Header>
+                <Card.Header>Posted by: {username}</Card.Header>
                 <Card.Body>
                     <blockquote className="blockquote mb-0">
                         <p>
                             '{quote.quoteText}'
-                       
                         </p>
                         <footer className="blockquote-footer">
-                         
+                         {quote.quoteAuthor}
                         </footer>
                         <Button variant="outline-secondary">Edit</Button>{' '}
                         <Button variant="outline-danger">Delete</Button>{' '}
