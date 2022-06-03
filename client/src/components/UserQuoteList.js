@@ -61,7 +61,7 @@ const [deleteQuote, { error }] = useMutation(DELETE_QUOTE);
         {<h1>{title}</h1>}
         {quotes && quotes.map((quote) => (
             <Card className="text-dark mb-3">
-                <Card.Header>Posted by: {username}</Card.Header>
+                <Card.Header>Posted by: {username} on {quote.createdAt}</Card.Header>
                 <Card.Body>
                     <blockquote className="blockquote mb-0">
                         <p>
