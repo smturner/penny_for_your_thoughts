@@ -19,7 +19,7 @@ const CreateQuote = () => {
 
         try{
             const { data } = await addQuote({
-                variables: { quoteText, quoteAuthor, quotePoster: Auth.getProfile().data.userName},
+                variables: { quoteText, quoteAuthor, quotePoster: Auth.getProfile().date._id},
             });
             console.log(data)
 
