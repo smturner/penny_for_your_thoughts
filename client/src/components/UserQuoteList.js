@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Card, Modal,Tab, Nav, Button } from 'react-bootstrap';
+import { Card, Modal, Tab, Nav, Button } from 'react-bootstrap';
 import { useQuery, useMutation} from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 import { DELETE_QUOTE } from '../utils/mutations';
@@ -21,6 +21,7 @@ const UserQuoteList = ({
 const [deleteQuote, { error }] = useMutation(DELETE_QUOTE);
 
     const [showModal, setShowModal] = useState(false);
+    const [modalInfo, setModalInfo] = useState({text: '', author: '', id: ''})
 
     if (!quotes.length) {
         return <h3>No Quotes to Show</h3>
@@ -72,7 +73,9 @@ const [deleteQuote, { error }] = useMutation(DELETE_QUOTE);
                         </footer>
                         {/* <Link to= {{ pathname: `create/edit/${quote._id}`}}
                         className="outline-secondary">Edit</Link> */}
-                           <Button variant="outline-secondary" onClick={() => setShowModal(true)}> Edit</Button>
+                           <Button variant="outline-secondary" onClick={() => {
+                             setModalInfo({text: quote.quoteText, author: quote.quoteAuthor, id: quote._id})
+                             setShowModal(true)}}> Edit</Button>
                         {/* <Button variant="outline-secondary">Edit</Button>{' '} */}
                         <Button onClick= {() => handleDelete(quote._id)} variant="outline-danger">Delete</Button>
 
@@ -98,7 +101,8 @@ const [deleteQuote, { error }] = useMutation(DELETE_QUOTE);
       <Modal.Body>
         <Tab.Content>
           <Tab.Pane eventKey='createQuote'>
-            <EditPost handleModalClose={() => setShowModal(false)} />
+            {console.log("modalInfo inside post: ", modalInfo)}
+            <EditPost props={modalInfo} handleModalClose={() => setShowModal(false)} />
           </Tab.Pane>
        
         </Tab.Content>
