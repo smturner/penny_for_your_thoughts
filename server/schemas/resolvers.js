@@ -6,16 +6,17 @@ const { signToken } = require('../utils/auth')
 const resolvers = {
   Query: {
     users: async () => {
-      return await User.find({}).populate('quotes').populate('follows');
+      return await User.find({}).populate('quotes').populate('follows')
     },
 
-    quotes: async (parent, { userName }) => {
-      const params = userName ? { userName } : {};
-      return await Quote.find(params)
+    quotes: async () => {
+      // const params = (userName===false) ? { userName } : {};
+      // console.log(userName)
+      return await Quote.find().populate('quotePoster');
     },
 
     quote: async (parent, { quoteId }) => {
-      return Quote.findOne({ _id: quoteId });
+      return Quote.findOne({ _id: quoteId }).populate('quotePoster');
     },
 
     user: async (parent, { userId }) => {
@@ -28,9 +29,9 @@ const resolvers = {
       }
     },
 
-    allQuotes: async (parent) => {
-      return Quote.find({}).populate('quotePoster');
-    }
+    // allQuotes: async () => {
+    //   return Quote.find({}).populate('quotePoster');
+    // }
   },
 
   Mutation: {
@@ -133,5 +134,7 @@ const resolvers = {
     },
   }
 };
+
+
 
 module.exports = resolvers;

@@ -26,15 +26,18 @@ mutation addUser($userName: String!, $email: String!, $password: String!) {
 
 export const ADD_QUOTE = gql`
 mutation addQuote($quoteText: String!, $quoteAuthor: String!) {
-    addQuote(quoteText: $quoteText, quoteAuthor: $quoteAuthor) {
-        _id
-      userName
-      quotes {
-        _id
-        quoteText
-        quoteAuthor
-        createdAt
-        quotePoster
+  addQuote(quoteText: $quoteText, quoteAuthor: $quoteAuthor) {
+    _id
+    userName
+    email
+    quotes {
+      _id
+      quoteText
+      quoteAuthor
+      createdAt
+      quotePoster {
+        userName
       }
     }
-  }`
+  }
+}`;

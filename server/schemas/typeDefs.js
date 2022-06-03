@@ -15,7 +15,7 @@ type Quote {
   quoteText:String
   quoteAuthor:String
   createdAt:String
-  quotePoster: String
+  quotePoster:User
 
 }
 
@@ -30,7 +30,6 @@ type Auth {
     user(userId: ID!):  User
     quote(quoteId: ID!): Quote
     me: User
-    allQuotes:[Quote]
   }
 
   type Mutation {

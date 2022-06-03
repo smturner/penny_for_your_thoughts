@@ -39,21 +39,25 @@ query users {
       quoteText
       quoteAuthor
       createdAt
-      quotePoster
+      quotePoster {
+        _id
+        userName
     }
+  }
   }
   `;
 
   export const QUERY_SINGLE_QUOTE = gql`
-  query getSingleQuote($quoteId: ID!) {
+  query singleQuote($quoteId: ID!) {
     quote(quoteId: $quoteId) {
-      _id
       quoteText
       quoteAuthor
       createdAt
       quotePoster
+      _id
     }
   }
+  
   `;
 
   export const QUERY_ME = gql`
@@ -67,7 +71,9 @@ query users {
         quoteText
         quoteAuthor
         createdAt
-        quotePoster
+        quotePoster {
+          userName
+        }
       }
     }
   }
