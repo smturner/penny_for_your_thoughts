@@ -30,9 +30,10 @@ const Home = () => {
   <Card>
   <Card.Header>My Quotes</Card.Header>
   <Card.Body>
-    {/* <UserQuotes>
+    
+    <UserQuotes>
       <UserQuoteList   />
-    </UserQuotes> */}
+    </UserQuotes>
     <blockquote className="blockquote mb-0">
       <p>
         {' '}
