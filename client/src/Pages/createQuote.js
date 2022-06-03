@@ -25,6 +25,7 @@ const CreateQuote = ({setShowModal}) => {
                     quoteText,
                     quoteAuthor }
             });
+            window.location.reload()
 
             setQuoteText ('')
             setQuoteAuthor ('')
