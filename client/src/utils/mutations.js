@@ -57,15 +57,9 @@ mutation updateQuote($quoteId: ID!, $quoteText: String!, $quoteAuthor: String!) 
 `
 
 export const DELETE_QUOTE = gql`
-mutation Mutation($removeQuoteQuoteId2: ID!) {
-  removeQuote(quoteId: $removeQuoteQuoteId2) {
+mutation RemoveQuote($quoteId: ID!) {
+  removeQuote(quoteId: $quoteId) {
     _id
-    quoteText
-    quoteAuthor
-    createdAt
-    quotePoster {
-      userName
-    }
   }
 }`
 
