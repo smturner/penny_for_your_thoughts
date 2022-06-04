@@ -2,15 +2,17 @@ import React, {useState} from 'react';
 import Auth from '../../utils/auth';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap'
 import CreateQuote from "../../Pages/createQuote"
+import '../../css/navbar.css'
+
   
   const MainNav = () => {
     const [showModal, setShowModal] = useState(false);
 
     return (
       <>
-        <Navbar fixed="top"  bg="light" expand="lg">
-          <Container>
-            <Navbar.Brand href="/">Penny For Your Thoughts</Navbar.Brand>
+        <Navbar id='Navbar' fixed="top"  bg="light" expand="lg">
+          <Container className= 'navContainer'>
+            <Navbar.Brand className= 'brand' href="/">Penny For Your Thoughts</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
@@ -20,11 +22,12 @@ import CreateQuote from "../../Pages/createQuote"
         <Nav.Link href="/home">Homepage</Nav.Link> */}
                 {Auth.loggedIn() ? (
                   <>
-                    <Nav.Link href="/home">Homepage</Nav.Link>
-                    <Nav.Link href="/viewAll">View Quotes</Nav.Link>
-                    <Nav.Link href="/user">Your Quotes</Nav.Link>
+                    <Nav.Link href="/home">Home</Nav.Link>
+                    <Nav.Link href="/viewAll">All Quotes</Nav.Link>                                       
+                    <Nav.Link href="/user">My Quotes</Nav.Link>
                     {/* <Nav.Link href="/create">Create Quotes</Nav.Link> */}
-                    <Nav.Link onClick={() => setShowModal(true)}>Create Quotes</Nav.Link>
+                    <Nav.Link onClick={() => setShowModal(true)}>Create Quote</Nav.Link>
+                    
 
                     <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                   </>

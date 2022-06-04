@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+#Navbar {
+    margin-bottom: 5px;
+    border-bottom: 3px;
+    border-color: black;
+
+
+}
+.navContainer {
+    
+
+    width: 100%;
+    margin: 10px;
+    border-radius: 5px;
+    border-color: black;
+
+}
+
+.brand {
+    cursor: pointer;
+    font-family: 'Courgette', cursive;
+    font-size: xx-large;
+    -webkit-text-stroke: 1px rgb(255, 153, 0);
+}
+
+.me-auto {
+    color:black;
+    text-shadow: 0 20.36px 9.896px #aca7a783, 0 -2px 1px #ffffff4a;
+    font-weight: bold;
+    font-size: 25px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+}
+@keyframes bounce {
+    0%, 20%, 60%, 100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  
+    40% {
+      -webkit-transform: translateY(-20px);
+      transform: translateY(-20px);
+    }
+  
+    80% {
+      -webkit-transform: translateY(-10px);
+      transform: translateY(-10px);
+    }
+  }
+.me-auto a:hover {
+    animation: bounce .8s;
+    /* font-family: 'Courgette', cursive; */
+    color:black;
+    /* filter: drop-shadow(-1px 3px 0px rgba(251, 115, 3, 0.719)); */
+
+}
+
