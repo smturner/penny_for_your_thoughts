@@ -4,6 +4,7 @@ import {Card, CardGroup,ListGroup} from 'react-bootstrap'
 import MainNav from '../components/navbar/navbar';
 import UserQuotes from '../Pages/userQuotes';
 import UserQuoteList from '../components/UserQuoteList'
+import HomeCarousel from '../components/carousel/carousel'
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
 
         <div>
             <MainNav />
+            <HomeCarousel />
 
             <CardGroup className="text-dark">
   <Card>
