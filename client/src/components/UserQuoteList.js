@@ -14,23 +14,16 @@ const UserQuoteList = ({
     quotes,
     username,
     title,
-    
-    
-}) => {
+    }) => {
 
 const [deleteQuote, { error }] = useMutation(DELETE_QUOTE);
-
-    const [showModal, setShowModal] = useState(false);
-    const [modalInfo, setModalInfo] = useState({text: '', author: '', id: ''})
+const [showModal, setShowModal] = useState(false);
+const [modalInfo, setModalInfo] = useState({text: '', author: '', id: ''})
 
     if (!quotes.length) {
         return <h3>No Quotes to Show</h3>
     }
 
- 
-
-  
-    // create function that accepts the book's mongo _id value as param and deletes the book from the database
     const handleDelete = async (quoteId) => {
       const token = Auth.loggedIn() ? Auth.getToken() : null;
   
@@ -45,14 +38,11 @@ const [deleteQuote, { error }] = useMutation(DELETE_QUOTE);
           throw new Error('something went wrong!');
         }
   window.location.reload()
-        // upon success, remove quote's id from localStorage
-      } catch (err) {
+
+} catch (err) {
         console.error(err);
       }
     };
-  
-  
-
 
     return (
         <>
@@ -60,15 +50,17 @@ const [deleteQuote, { error }] = useMutation(DELETE_QUOTE);
         {<h3>{title}</h3>}
         {quotes && quotes.map((quote) => (
             <Card className="text-light mb-3 myQuotes">
-                <Card.Header className="text-light">Posted by: {username} on {quote.createdAt}</Card.Header>
+                <Card.Header className="text-light">Posted by: You on {quote.createdAt}</Card.Header>
                 <Card.Body>
                     <blockquote className="blockquote mb-0">
                         <p>
-                            '{quote.quoteText}'
+                            "{quote.quoteText}"
                         </p>
                         <footer className="blockquote-footer">
                          {quote.quoteAuthor}
                         </footer>
+
+                        <Card.Footer>
                         {/* <Link to= {{ pathname: `create/edit/${quote._id}`}}
                         className="outline-secondary">Edit</Link> */}
                            <Button className="editBtn" variant="info" onClick={() => {
@@ -76,20 +68,21 @@ const [deleteQuote, { error }] = useMutation(DELETE_QUOTE);
                              setShowModal(true)}}> Edit</Button>
                         {/* <Button variant="outline-secondary">Edit</Button>{' '} */}
                         <Button className="editBtn" onClick= {() => handleDelete(quote._id)} variant="danger">Delete</Button>
-
+                        </Card.Footer>
                     </blockquote>
                 </Card.Body>
             </Card>
             
         ))}
-        <Modal
+        <Modal 
+        className= "modalCreate"
     
     size='lg'
     show={showModal}
     onHide={() => setShowModal(false)}
     aria-labelledby='signup-modal'>
     <Tab.Container defaultActiveKey='createQuote'>
-      <Modal.Header closeButton> <h3>Edit Post</h3>
+      <Modal.Header closeButton> 
         <Modal.Title id='signup-modal'>
           <Nav variant='pills'>
          

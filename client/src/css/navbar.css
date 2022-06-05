@@ -67,3 +67,23 @@
     border-color: black;
     margin-bottom: 10px;
 }
+
+/* .modalCreate{
+  font-family: 'Courgette', cursive;
+
+
+} */
+
+body {
+  padding-top: 60px;
+}
+@media (max-width: 979px) {
+  .sticky-nav {
+    padding-top: 0px;
+  }
+}
+
+.sticky-nav {
+  position: fixed;
+  top: 0;
+}

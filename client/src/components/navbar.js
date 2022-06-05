@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Auth from '../../utils/auth';
+import Auth from '../utils/auth';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap'
-import CreateQuote from "../../Pages/createQuote"
-import '../../css/navbar.css'
+import CreateQuote from "../Pages/createQuote"
+import '../css/navbar.css'
 
 
 const MainNav = () => {
@@ -11,7 +11,7 @@ const MainNav = () => {
   return (
     <>
     <div className="space"></div>
-      <Navbar id='navbar' fixed="top" bg="light" expand="lg">
+      <Navbar id='navbar' className="sticky-nav" fixed="top" bg="light" expand="lg">
         <Container className='navContainer'>
           <Navbar.Brand className='brand' href="/">"Penny For Your Thoughts"</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -41,13 +41,13 @@ const MainNav = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Modal
+      <Modal    className= "modalCreate"
         size='lg'
         show={showModal}
         onHide={() => setShowModal(false)}
         aria-labelledby='signup-modal'>
-        <Tab.Container defaultActiveKey='createQuote'>
-          <Modal.Header closeButton>
+        <Tab.Container className= 'modalCreate' defaultActiveKey='createQuote'>
+          <Modal.Header  closeButton>
             <Modal.Title id='signup-modal'>
               <Nav variant='pills'>
 

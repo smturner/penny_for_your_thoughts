@@ -3,18 +3,14 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import React from 'react';
 import Auth from './utils/auth'
-// import { } from 'react-dom';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 //need these imports to connect apolloClient to front end
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
-// import AppLogin from './AppLogin'
 import { setContext } from '@apollo/client/link/context';
-import MainNav from './components/navbar/navbar';
 import Home from './Pages/Home'
-import LoginCard from './components/card/loginCard'
-
-import Login from './components/login/login.component'
-import SignUp from './components/login/signup.component'
+import LoginCard from './components/loginCard'
+import Login from './components/loginComponent'
+import SignUp from './components/SignupComponent'
 import CreateQuote from './Pages/createQuote'
 import UserQuotes from './Pages/userQuotes'
 import AllQuotes from './Pages/allQuotes';
@@ -46,13 +42,10 @@ function App() {
   return (
 
     <ApolloProvider client={client}>
-
       <div className="App">
-
+        
         <Router>
           <header className="App-header">
-
-          {/* <MainNav /> */}
             <Routes>
               <Route
               path= "/"
@@ -90,15 +83,9 @@ function App() {
               element={<AllQuotes/>}
               />
             </Routes>
-
             
-          
-          {/* <AllQuotes /> */}
-
           </header>
         </Router>
-
-        
 
       </div>
 

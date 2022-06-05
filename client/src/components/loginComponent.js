@@ -1,8 +1,7 @@
 import React, { Component, useState } from 'react'
 import { useMutation } from '@apollo/client';
-import { Link } from 'react-router-dom';
-import { LOGIN_USER } from '../../utils/mutations';
-import Auth from '../../utils/auth';
+import { LOGIN_USER } from '../utils/mutations';
+import Auth from '../utils/auth';
 
 function Login(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -28,9 +27,6 @@ function Login(props) {
       [name]: value,
     });
   };
-
-
-// export default class Login extends Component
 
   
   

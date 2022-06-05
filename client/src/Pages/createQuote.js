@@ -1,24 +1,17 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_QUOTE } from '../utils/mutations';
-import { QUERY_QUOTES, QUERY_ME } from '../utils/queries';
-import Auth from '../utils/auth';
 import { Card, Form, Button} from 'react-bootstrap';
-import MainNav from '../components/navbar/navbar';
-import { Route,Link } from 'react-router-dom'
 
-// import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import '../css/home.css'
 
 const CreateQuote = ({setShowModal}) => {
-    // const [showModal, setShowModal] = useState(false);
-
     const [quoteText, setQuoteText] = useState('');
     const [quoteAuthor, setQuoteAuthor] = useState('');
     const [addQuote, { error }] = useMutation(ADD_QUOTE);
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-        // console.log("EVENT TRIGGERED") worked
         try{
             const { data } = await addQuote({
                 variables: {
@@ -48,10 +41,8 @@ const CreateQuote = ({setShowModal}) => {
 
     return (
         <>
-                    {/* <MainNav /> */}
-
             <Card className= "text-dark">
-                <Card.Header>"Penny For Your Thoughts"</Card.Header>
+                <Card.Header>Create A New Quote</Card.Header>
                 {/* {Auth.loggedIn() ? ( */}
 
                 <Card.Body>
@@ -78,16 +69,17 @@ const CreateQuote = ({setShowModal}) => {
                             type="text" placeholder="Please enter the Author" />
                         </Form.Group>
                         
-                        <Button  variant="primary" type="submit">
+                        <Button className="createQuote"  variant="primary" type="submit">
                             Submit
                         </Button>
-                            {/* <Link to='/home'  variant="primary" type="submit">
-                            Submit
-                        </Link> */}
+                        
                     </Form>
                    
-                </Card.Body>
-                {/*  )} */}
+                </Card.Body> 
+                {/* )} */}
+
+                
+                  
                
             </Card>
 

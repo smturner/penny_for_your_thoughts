@@ -46,4 +46,3 @@ type Auth {
 
 module.exports = typeDefs;
 
-// addQuote(quoteText: String!, quoteAuthor: String!): Quote

@@ -15,7 +15,7 @@ function HomeCarousel() {
     return (
       // <Carousel activeIndex={index} onSelect={handleSelect}>
       //   <Carousel.Item>
-      <Carousel fade>
+      <Carousel className="carousel" fade>
   <Carousel.Item interval={1200}>
           <img
             className="d-block h-25! w-100"
