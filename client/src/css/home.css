@@ -50,7 +50,8 @@ p {
 .blockquote-footer {
     color:rgb(11, 11, 11)
 }
-.editBtn {
+.editBtn
+ {
     font-weight: bold;
     background-color: rgb(103, 103, 102);
     color:black;
@@ -68,4 +69,41 @@ p {
 .space {
     border-bottom: 5px;
     border-color: black;
+    /* padding-top: 30%; */
+}
+
+.createQuote
+ {
+    font-weight: bold;
+    background-color: rgb(103, 103, 102);
+    color:black;
+    border-radius: 10px;
+    border-width: 3px;
+    border-color: black;
+    filter: drop-shadow(-3px 5px 7px rgba(8, 8, 8, 0.719));
+    margin-right:5px;
+}
+.createQuote :hover {
+    filter: drop-shadow(-3px 5px 7px rgba(246, 245, 244, 0.719));
+    font-weight: bold;
+}
+
+.allQuotes
+
+{
+    padding-top:100px;
+}
+
+.homePage{
+    padding-top:77px;
+}
+
+.userQuotes
+{
+    padding-top:100px;
+}
+
+.carousel{
+    padding-bottom:-25px;
+
 }

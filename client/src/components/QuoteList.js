@@ -23,7 +23,7 @@ const Quote = ({
                     <Card.Body>
                         <blockquote className="blockquote mb-0">
                             <p>
-                                '{quotes.quoteText}'
+                                "{quotes.quoteText}"
 
                             </p>
                             <footer className="blockquote-footer">

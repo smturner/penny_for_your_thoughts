@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Card, CardGroup, ListGroup, Container, Row, Col } from 'react-bootstrap'
-import MainNav from '../components/navbar/navbar';
+import MainNav from '../components/navbar';
 import UserQuotes from '../Pages/userQuotes';
 import UserQuoteList from '../components/UserQuoteList'
 import AllQuotes from '../Pages/allQuotes';
@@ -12,9 +12,10 @@ import '../css/home.css'
 const Home = () => {
   return (
 
+<>
+<MainNav />
 
-    <div>
-      <MainNav />
+    <div className= "homePage">
       <HomeCarousel />
 
       {/* <CardGroup className="text-dark">
@@ -31,15 +32,15 @@ const Home = () => {
             <small className="text-muted">Last updated 3 mins ago</small>
           </Card.Footer>
         </Card> */}
-        <Container className="mainbg">
+        <Container className="mainbg ">
 
-          <Row>
-            <Col>
+          <Row >
+            <Col col-5>
             <UserQuotes className='myQuotes'>
               <UserQuoteList />
             </UserQuotes>
             </Col>
-            <Col>
+            <Col col-5>
             <AllQuotes ClassName='allQuotes'>
               <AllQuoteList />
             </AllQuotes>
@@ -96,6 +97,7 @@ const Home = () => {
 
       </CardGroup> */}
     </div>
+    </>
   );
 };
 

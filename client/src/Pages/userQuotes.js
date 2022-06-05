@@ -15,8 +15,8 @@ const UserQuotes = () => {
         
         <div>
             <MainNav />
-           <div className="space"></div>
-            <div className="col-md-10 mb-3">
+           <div className="userQuotes space"></div>
+            <div className>
                 {loading ? (
                     <div>Loading...</div>
                 ): (

@@ -27,7 +27,7 @@ const AllQuotes = () => {
 
 
            
-            <div className="col-10 mb-3">
+            <div className="allQuotes mb-3">
                 {loading ? (
                     <div>Loading...</div>
                 ): (

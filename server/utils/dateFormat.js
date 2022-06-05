@@ -24,12 +24,12 @@ const addDateSuffix = (date) => {
   ) => {
     // create month object
     const months = {
-      0: monthLength === 'short' ? 'Jan' : 'January',
-      1: monthLength === 'short' ? 'Feb' : 'February',
+      0: monthLength === 'short' ? '1' : '1',
+      1: monthLength === 'short' ? '2' : '2',
       2: monthLength === 'short' ? 'Mar' : 'March',
       3: monthLength === 'short' ? 'Apr' : 'April',
       4: monthLength === 'short' ? 'May' : 'May',
-      5: monthLength === 'short' ? 'Jun' : 'June',
+      5: monthLength === 'short' ? '5' : '5',
       6: monthLength === 'short' ? 'Jul' : 'July',
       7: monthLength === 'short' ? 'Aug' : 'August',
       8: monthLength === 'short' ? 'Sep' : 'September',
@@ -41,9 +41,11 @@ const addDateSuffix = (date) => {
     const dateObj = new Date(timestamp);
     const formattedMonth = months[dateObj.getMonth()];
   
-    const dayOfMonth = dateSuffix
-      ? addDateSuffix(dateObj.getDate())
-      : dateObj.getDate();
+    const dayOfMonth = 
+    // dateSuffix
+    //   ? addDateSuffix(dateObj.getDate())
+      // : 
+      dateObj.getDate();
   
     const year = dateObj.getFullYear();
     let hour =
@@ -61,7 +63,7 @@ const addDateSuffix = (date) => {
     // set `am` or `pm`
     const periodOfDay = dateObj.getHours() >= 12 ? 'pm' : 'am';
   
-    const formattedTimeStamp = `${formattedMonth} ${dayOfMonth}, ${year} at ${hour}:${minutes} ${periodOfDay}`;
+    const formattedTimeStamp = `${formattedMonth}/${dayOfMonth}/${year} at ${hour}:${minutes} ${periodOfDay}`;
   
     return formattedTimeStamp;
   };

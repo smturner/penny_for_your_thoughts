@@ -50,7 +50,7 @@ const [modalInfo, setModalInfo] = useState({text: '', author: '', id: ''})
         {<h3>{title}</h3>}
         {quotes && quotes.map((quote) => (
             <Card className="text-light mb-3 myQuotes">
-                <Card.Header className="text-light">Posted by: {username} on {quote.createdAt}</Card.Header>
+                <Card.Header className="text-light">Posted by: You on {quote.createdAt}</Card.Header>
                 <Card.Body>
                     <blockquote className="blockquote mb-0">
                         <p>
@@ -59,6 +59,8 @@ const [modalInfo, setModalInfo] = useState({text: '', author: '', id: ''})
                         <footer className="blockquote-footer">
                          {quote.quoteAuthor}
                         </footer>
+
+                        <Card.Footer>
                         {/* <Link to= {{ pathname: `create/edit/${quote._id}`}}
                         className="outline-secondary">Edit</Link> */}
                            <Button className="editBtn" variant="info" onClick={() => {
@@ -66,20 +68,21 @@ const [modalInfo, setModalInfo] = useState({text: '', author: '', id: ''})
                              setShowModal(true)}}> Edit</Button>
                         {/* <Button variant="outline-secondary">Edit</Button>{' '} */}
                         <Button className="editBtn" onClick= {() => handleDelete(quote._id)} variant="danger">Delete</Button>
-
+                        </Card.Footer>
                     </blockquote>
                 </Card.Body>
             </Card>
             
         ))}
-        <Modal
+        <Modal 
+        className= "modalCreate"
     
     size='lg'
     show={showModal}
     onHide={() => setShowModal(false)}
     aria-labelledby='signup-modal'>
     <Tab.Container defaultActiveKey='createQuote'>
-      <Modal.Header closeButton> <h3>Edit Quote</h3>
+      <Modal.Header closeButton> 
         <Modal.Title id='signup-modal'>
           <Nav variant='pills'>
          

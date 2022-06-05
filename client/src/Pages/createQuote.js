@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_QUOTE } from '../utils/mutations';
 import { Card, Form, Button} from 'react-bootstrap';
-// import Auth from '../utils/auth';
+
+import '../css/home.css'
 
 const CreateQuote = ({setShowModal}) => {
     const [quoteText, setQuoteText] = useState('');
@@ -41,7 +42,7 @@ const CreateQuote = ({setShowModal}) => {
     return (
         <>
             <Card className= "text-dark">
-                <Card.Header>"Penny For Your Thoughts"</Card.Header>
+                <Card.Header>Create A New Quote</Card.Header>
                 {/* {Auth.loggedIn() ? ( */}
 
                 <Card.Body>
@@ -68,7 +69,7 @@ const CreateQuote = ({setShowModal}) => {
                             type="text" placeholder="Please enter the Author" />
                         </Form.Group>
                         
-                        <Button  variant="primary" type="submit">
+                        <Button className="createQuote"  variant="primary" type="submit">
                             Submit
                         </Button>
                         
