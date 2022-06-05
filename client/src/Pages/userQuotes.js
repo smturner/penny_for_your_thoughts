@@ -18,17 +18,19 @@ console.log(data)
     // console.log(quotes)
 
     return (
+
+        
         <div>
             <MainNav />
-           
-            <div className="col-12 col-md-8 mb-3">
+           <div className="space"></div>
+            <div className="col-md-10 mb-3">
                 {loading ? (
                     <div>Loading...</div>
                 ): (
                     <UserQuoteList
                     username={username}
                     quotes={quotes}
-                    title="Your Quotes"
+                    title="``Your Quotes``"
                      />
 
                 )}

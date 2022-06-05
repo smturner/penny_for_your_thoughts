@@ -1,4 +1,18 @@
+.like-button-wrapper :hover {
+  filter: drop-shadow(-3px 5px 7px rgba(246, 245, 244, 0.719));
+  font-weight: bold;
+}
+
+
 .like-button-wrapper {
+  background-color: rgb(103, 103, 102);
+    color:black;
+    border-radius: 10px;
+    border-width: 3px;
+    filter: drop-shadow(-3px 5px 7px rgba(8, 8, 8, 0.719));
+
+
+  // background-color: dimgrey;
 //     &::before {
 //         content: "";
 //         z-index: 1;
@@ -36,7 +50,7 @@
         animation: click 300ms;
       }
     }
-  
+
   
   @keyframes click {
     0% {

@@ -3,6 +3,7 @@ import cn from "classnames";
 import { ReactComponent as Hand } from "../css/hand.svg";
 import "../css/styles.scss";
 
+
 const particleList = Array.from(Array(10));
 
 const LikeButton = () => {
@@ -39,7 +40,7 @@ const LikeButton = () => {
       )}
       <div className="like-button">
         <Hand />
-        <span>Like</span>
+        <span className="likebg">Like</span>
         <span className={cn("suffix", { liked })}>d</span>
       </div>
     </button>
