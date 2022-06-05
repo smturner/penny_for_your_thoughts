@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
-#Navbar {
+#navbar {
     margin-bottom: 5px;
     border-bottom: 3px;
     border-color: black;
@@ -19,9 +19,11 @@
 
 .brand {
     cursor: pointer;
+    font: weight 700;
     font-family: 'Courgette', cursive;
-    font-size: xx-large;
+    font-size: 40px;
     -webkit-text-stroke: 1px rgb(255, 153, 0);
+    
 }
 
 .me-auto {
@@ -33,6 +35,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    margin-right: 10px;
+
 
 }
 @keyframes bounce {

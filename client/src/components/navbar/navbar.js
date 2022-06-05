@@ -10,9 +10,9 @@ import '../../css/navbar.css'
 
     return (
       <>
-        <Navbar id='Navbar' fixed="top"  bg="light" expand="lg">
+        <Navbar id='navbar' fixed="top"  bg="light" expand="lg">
           <Container className= 'navContainer'>
-            <Navbar.Brand className= 'brand' href="/">Penny For Your Thoughts</Navbar.Brand>
+            <Navbar.Brand className= 'brand' href="/">"Penny For Your Thoughts"</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
