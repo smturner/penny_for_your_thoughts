@@ -10,8 +10,6 @@ const resolvers = {
     },
 
     quotes: async () => {
-      // const params = (userName===false) ? { userName } : {};
-      // console.log(userName)
       return await Quote.find().sort({ createdAt: -1 }).populate('quotePoster');
     },
 
@@ -28,10 +26,6 @@ const resolvers = {
         return User.findOne({ _id: context.user._id }).sort({ createdAt: -1 }).populate('quotes')
       }
     },
-
-    // allQuotes: async () => {
-    //   return Quote.find({}).populate('quotePoster');
-    // }
   },
 
   Mutation: {
@@ -58,7 +52,6 @@ const resolvers = {
       return { token, user };
     },
 
-    // TESTED - WORKS
     addQuote: async (parent, { quoteText, quoteAuthor }, context) => {
       console.log("Context.user: ", context.user);
       if(context.user) {
@@ -67,22 +60,15 @@ const resolvers = {
           quoteAuthor, 
           quotePoster: context.user._id,
         })
-
-        console.log("Quote ID: ", quote._id);
         return await User.findOneAndUpdate(
           {_id: context.user._id},
           {$addToSet: { quotes: quote._id}},
           {new: true}
           ).populate('quotes')
-          // return quote;
-
       }
       throw new AuthenticationError('You need to be logged in');
-      // const token = signToken(user);
-      // return user
     },
-
-    // TESTED - WORKS
+  
     removeQuote: async (parent, { quoteId }, context) => {
       if (context.user) {
         const quote = await Quote.findOneAndDelete({
@@ -101,7 +87,6 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
 
-    // TESTED - WORKS
     updateQuote: async (parent, { quoteId, quoteText, quoteAuthor }) => {
       return Quote.findByIdAndUpdate(
         quoteId,
@@ -111,7 +96,6 @@ const resolvers = {
     },
 
 
-    // TESTED - WORKING   
     addFollow: async (parent, { userName }, context) => {
       const newFollow = await User.findOne({ userName })
       
@@ -124,7 +108,6 @@ const resolvers = {
       }
     },
 
-    //TESTED - WORKS!
     removeFollow: async (parent, { userName }, context) => {
       const newFollow = await User.findOne({ userName })
 
@@ -138,7 +121,5 @@ const resolvers = {
     },
   }
 };
-
-
 
 module.exports = resolvers;

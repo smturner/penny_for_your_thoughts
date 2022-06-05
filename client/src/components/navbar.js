@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import Auth from '../../utils/auth';
+import Auth from '../utils/auth';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap'
-import CreateQuote from "../../Pages/createQuote"
+import CreateQuote from "../Pages/createQuote"
   
   const MainNav = () => {
     const [showModal, setShowModal] = useState(false);
@@ -14,16 +14,12 @@ import CreateQuote from "../../Pages/createQuote"
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
-                {/* 
-        <Nav.Link href="/viewAll">View Quotes</Nav.Link>
-        <Nav.Link href="/user">Your Quotes</Nav.Link>
-        <Nav.Link href="/home">Homepage</Nav.Link> */}
+      
                 {Auth.loggedIn() ? (
                   <>
                     <Nav.Link href="/home">Homepage</Nav.Link>
                     <Nav.Link href="/viewAll">View Quotes</Nav.Link>
                     <Nav.Link href="/user">Your Quotes</Nav.Link>
-                    {/* <Nav.Link href="/create">Create Quotes</Nav.Link> */}
                     <Nav.Link onClick={() => setShowModal(true)}>Create Quotes</Nav.Link>
 
                     <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
@@ -51,12 +47,7 @@ import CreateQuote from "../../Pages/createQuote"
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              {/* <Tab.Content> */}
-                {/* <Tab.Pane eventKey='createQuote'> */}
                   <CreateQuote  handleModalClose={() => setShowModal(false)}  />
-                {/* </Tab.Pane> */}
-             
-              {/* </Tab.Content> */}
             </Modal.Body>
           </Tab.Container>
         </Modal>

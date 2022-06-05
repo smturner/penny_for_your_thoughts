@@ -1,18 +1,15 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import QuoteList from '../components/QuoteList';
 import { QUERY_QUOTES,QUERY_USERS } from '../utils/queries';
 import { QUERY_ME, QUERY_SINGLE_npUSER } from '../utils/queries'
 import { Card, Form, InputGroup, FormControl, Button} from 'react-bootstrap';
-import MainNav from '../components/navbar/navbar';
+import MainNav from '../components/navbar';
+import QuoteList from '../components/QuoteList';
 
 const AllQuotes = () => {
     const { loading, data } = useQuery(QUERY_QUOTES);
     const quotes= data?.quotes || [];
-console.log(quotes)
-// const { loading, data } = useQuery(QUERY_USERS)
-// const users=data?.users || []
-// console.log(users)
+// console.log(quotes)
 
     return (
         <div>
@@ -27,29 +24,19 @@ console.log(quotes)
                     Get Quotes
                 </Button>
             </InputGroup>
-
-        
-           
+      
             <div className="col-12 mb-3">
                 {loading ? (
                     <div>Loading...</div>
                 ): (
                     <QuoteList
-                    
-                    // users={users}
                     quotes={quotes}
                     title="All Quotes"
                      />
 
                 )}
-               
             </div>
-
-          
-
-
         </div>
-
     )
 }
 

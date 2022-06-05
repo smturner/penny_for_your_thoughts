@@ -1,20 +1,19 @@
 [
   {
-    "userName": "dummy",
+    "userName": "Dummy",
     "email": "dummy@test.com",
     "password": "dummy123"
   },
 
   {
-    "userName": "Test1",
-    "email": "test1@test.com",
-    "password": "123456"
+    "userName": "50Cent",
+    "email": "cent@test.com",
+    "password": "cent123"
   },
-
   {
-    "userName": "Test2",
-    "email": "test2@test.com",
-    "password": "123456"
+    "userName": "CopperPenny",
+    "email": "penny@test.com",
+    "password": "penny123"
   }
   
 ]

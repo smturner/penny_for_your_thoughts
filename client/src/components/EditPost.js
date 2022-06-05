@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
-import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap'
-import CreateQuote from "../Pages/createQuote"
 import { Card, Form, Button } from 'react-bootstrap';
-import { useQuery } from '@apollo/client';
-import { QUERY_SINGLE_QUOTE } from '../utils/queries'
 import { UPDATE_QUOTE }from '../utils/mutations'
 import { useMutation } from '@apollo/client';
 
