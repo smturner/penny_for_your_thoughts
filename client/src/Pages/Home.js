@@ -1,17 +1,23 @@
 import React from 'react';
-import { Card, CardGroup, ListGroup } from 'react-bootstrap'
-import MainNav from '../components/navbar';
+
+import { Card, CardGroup, ListGroup, Container, Row, Col } from 'react-bootstrap'
+import MainNav from '../components/navbar/navbar';
 import UserQuotes from '../Pages/userQuotes';
 import UserQuoteList from '../components/UserQuoteList'
+import AllQuotes from '../Pages/allQuotes';
+import AllQuoteList from '../components/QuoteList'
+import HomeCarousel from '../components/carousel/carousel'
 
+import '../css/home.css'
 const Home = () => {
   return (
 
 
     <div>
       <MainNav />
+      <HomeCarousel />
 
-      <CardGroup className="text-dark">
+      {/* <CardGroup className="text-dark">
         <Card>
           <Card.Body>
             <Card.Title>Card Title</Card.Title>
@@ -24,14 +30,27 @@ const Home = () => {
           <Card.Footer>
             <small className="text-muted">Last updated 3 mins ago</small>
           </Card.Footer>
-        </Card>
+        </Card> */}
+        <Container className="mainbg">
 
-        <Card>
+          <Row>
+            <Col>
+            <UserQuotes className='myQuotes'>
+              <UserQuoteList />
+            </UserQuotes>
+            </Col>
+            <Col>
+            <AllQuotes ClassName='allQuotes'>
+              <AllQuoteList />
+            </AllQuotes>
+            </Col>
+          </Row>
+        </Container>
+        {/* <Card>
           <Card.Header>My Quotes</Card.Header>
           <Card.Body>
-            {/* <UserQuotes>
-      <UserQuoteList   />
-    </UserQuotes> */}
+
+
             <blockquote className="blockquote mb-0">
               <p>
                 {' '}
@@ -75,7 +94,7 @@ const Home = () => {
           </Card.Footer>
         </Card>
 
-      </CardGroup>
+      </CardGroup> */}
     </div>
   );
 };

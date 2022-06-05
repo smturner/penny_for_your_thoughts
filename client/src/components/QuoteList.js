@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, Form, Button } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
+
 import LikeButton from './LikeButton'
 const Quote = ({
     quotes,
@@ -13,26 +14,31 @@ const Quote = ({
 
 
     return (
-        <>
-        {showTitle && <h3>{title}</h3>}
-        {quotes && quotes.map((quotes) => (
-            <Card className="text-dark mb-3">
-                <Card.Header>Posted by: {quotes.quotePoster.userName} on {quotes.createdAt}</Card.Header>
-                <Card.Body>
-                    <blockquote className="blockquote mb-0">
-                        <p>
-                            "{quotes.quoteText}"
-                         
-                        </p>
-                        <footer className="blockquote-footer">
-                        {quotes.quoteAuthor}</footer>
-                    </blockquote>
-                </Card.Body>
-                <LikeButton />
-            </Card>
-        ))}
-            
-        </>
+        <div className="main">
+
+            {showTitle && <h3>{title}</h3>}
+            {quotes && quotes.map((quotes) => (
+                <Card className="text-light mb-3 myQuotes">
+                    <Card.Header>Posted by: {quotes.quotePoster.userName} on {quotes.createdAt}</Card.Header>
+                    <Card.Body>
+                        <blockquote className="blockquote mb-0">
+                            <p>
+                                '{quotes.quoteText}'
+
+                            </p>
+                            <footer className="blockquote-footer">
+                                {quotes.quoteAuthor}</footer>
+                        </blockquote>
+                    </Card.Body>
+                    <Card.Footer>
+                        <LikeButton />
+                    </Card.Footer>
+
+
+                </Card>
+            ))}
+
+        </div>
 
     )
 }

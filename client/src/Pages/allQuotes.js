@@ -14,7 +14,7 @@ const AllQuotes = () => {
     return (
         <div>
             <MainNav />
-            <InputGroup className="mb-3">
+            {/* <InputGroup className="mb-3">
                 <FormControl
                     placeholder="Search by User"
                     aria-label="Recipient's username"
@@ -23,15 +23,17 @@ const AllQuotes = () => {
                 <Button variant="outline-secondary" id="button-addon2">
                     Get Quotes
                 </Button>
-            </InputGroup>
-      
-            <div className="col-12 mb-3">
+            </InputGroup> */}
+
+
+           
+            <div className="col-10 mb-3">
                 {loading ? (
                     <div>Loading...</div>
                 ): (
                     <QuoteList
                     quotes={quotes}
-                    title="All Quotes"
+                    title="``All Quotes``"
                      />
 
                 )}

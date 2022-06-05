@@ -46,13 +46,11 @@ const [modalInfo, setModalInfo] = useState({text: '', author: '', id: ''})
 
     return (
         <>
-        <br/>
-        <br/>
-        <br/>
-        {<h1>{title}</h1>}
+      <div className="space"></div>
+        {<h3>{title}</h3>}
         {quotes && quotes.map((quote) => (
-            <Card className="text-dark mb-3">
-                <Card.Header>Posted by: {username} on {quote.createdAt}</Card.Header>
+            <Card className="text-light mb-3 myQuotes">
+                <Card.Header className="text-light">Posted by: {username} on {quote.createdAt}</Card.Header>
                 <Card.Body>
                     <blockquote className="blockquote mb-0">
                         <p>
@@ -61,10 +59,13 @@ const [modalInfo, setModalInfo] = useState({text: '', author: '', id: ''})
                         <footer className="blockquote-footer">
                          {quote.quoteAuthor}
                         </footer>
-                           <Button variant="outline-secondary" onClick={() => {
+                        {/* <Link to= {{ pathname: `create/edit/${quote._id}`}}
+                        className="outline-secondary">Edit</Link> */}
+                           <Button className="editBtn" variant="info" onClick={() => {
                              setModalInfo({text: quote.quoteText, author: quote.quoteAuthor, id: quote._id})
-                             setShowModal(true)}}>Edit Quote</Button>
-                        <Button onClick= {() => handleDelete(quote._id)} variant="outline-danger">Delete</Button>
+                             setShowModal(true)}}> Edit</Button>
+                        {/* <Button variant="outline-secondary">Edit</Button>{' '} */}
+                        <Button className="editBtn" onClick= {() => handleDelete(quote._id)} variant="danger">Delete</Button>
 
                     </blockquote>
                 </Card.Body>

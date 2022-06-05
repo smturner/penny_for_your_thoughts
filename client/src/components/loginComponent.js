@@ -69,6 +69,9 @@ function Login(props) {
           <button type="submit" className="btn btn-primary">
             Submit
           </button>
+          <p className="">
+          Haven't signed up? <a href="/sign-up">sign in here</a>
+        </p>
         </div>
        
       </form>

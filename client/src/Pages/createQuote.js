@@ -41,8 +41,9 @@ const CreateQuote = ({setShowModal}) => {
     return (
         <>
             <Card className= "text-dark">
-                <Card.Header>Penny For Your Thoughts</Card.Header>
-                {/* {Auth.loggedIn() && ( */}
+                <Card.Header>"Penny For Your Thoughts"</Card.Header>
+                {/* {Auth.loggedIn() ? ( */}
+
                 <Card.Body>
                     <Form onSubmit={handleFormSubmit}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
