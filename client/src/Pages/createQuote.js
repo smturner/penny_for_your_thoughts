@@ -51,7 +51,7 @@ const CreateQuote = ({setShowModal}) => {
                     {/* <MainNav /> */}
 
             <Card className= "text-dark">
-                <Card.Header>Penny For Your Thoughts</Card.Header>
+                <Card.Header>"Penny For Your Thoughts"</Card.Header>
                 {/* {Auth.loggedIn() ? ( */}
 
                 <Card.Body>

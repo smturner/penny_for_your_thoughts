@@ -3,6 +3,7 @@ import cn from "classnames";
 import { ReactComponent as Hand } from "../css/hand.svg";
 import "../css/styles.scss";
 
+
 const particleList = Array.from(Array(10));
 
 const LikeButton = () => {

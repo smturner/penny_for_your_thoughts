@@ -7,6 +7,7 @@ import UserQuoteList from '../components/UserQuoteList'
 import AllQuotes from '../Pages/allQuotes';
 import AllQuoteList from '../components/QuoteList'
 import HomeCarousel from '../components/carousel/carousel'
+
 import '../css/home.css'
 const Home = () => {
   return (
@@ -30,15 +31,16 @@ const Home = () => {
             <small className="text-muted">Last updated 3 mins ago</small>
           </Card.Footer>
         </Card> */}
-        <Container>
+        <Container className="mainbg">
+
           <Row>
             <Col>
-            <UserQuotes>
+            <UserQuotes className='myQuotes'>
               <UserQuoteList />
             </UserQuotes>
             </Col>
             <Col>
-            <AllQuotes>
+            <AllQuotes ClassName='allQuotes'>
               <AllQuoteList />
             </AllQuotes>
             </Col>
