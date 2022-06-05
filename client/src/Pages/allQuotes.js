@@ -28,7 +28,7 @@ console.log(quotes)
                 </Button>
             </InputGroup> */}
 
-        
+
            
             <div className="col-10 mb-3">
                 {loading ? (

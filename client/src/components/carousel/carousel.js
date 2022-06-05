@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Carousel, CarouselGroup} from 'react-bootstrap'
+import {Carousel,  CarouselGroup} from 'react-bootstrap'
 import Penny from '../../images/penny3.jpg'
 import Penny1 from '../../images/penny4.jpg'
 import Penny2 from '../../images/penny5.jpg'

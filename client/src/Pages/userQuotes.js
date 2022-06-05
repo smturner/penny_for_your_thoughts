@@ -22,7 +22,7 @@ console.log(data)
         
         <div>
             <MainNav />
-           
+           <div className="space"></div>
             <div className="col-md-10 mb-3">
                 {loading ? (
                     <div>Loading...</div>

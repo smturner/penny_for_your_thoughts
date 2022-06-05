@@ -62,4 +62,8 @@
     /* filter: drop-shadow(-1px 3px 0px rgba(251, 115, 3, 0.719)); */
 
 }
-
+.space {
+    border-bottom: 5px;
+    border-color: black;
+    margin-bottom: 10px;
+}

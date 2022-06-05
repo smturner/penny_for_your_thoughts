@@ -10,6 +10,7 @@ const MainNav = () => {
 
   return (
     <>
+    <div className="space"></div>
       <Navbar id='navbar' fixed="top" bg="light" expand="lg">
         <Container className='navContainer'>
           <Navbar.Brand className='brand' href="/">"Penny For Your Thoughts"</Navbar.Brand>

@@ -23,7 +23,8 @@
     font-size: 30px;
     border-radius: 60px;
     border-color: black;
-    border: 25px;
+    border-width: 3px;
+    filter: drop-shadow(0px 0px 7px rgb(83, 81, 80));
 
 }
 
@@ -48,4 +49,23 @@ p {
 
 .blockquote-footer {
     color:rgb(11, 11, 11)
+}
+.editBtn {
+    font-weight: bold;
+    background-color: rgb(103, 103, 102);
+    color:black;
+    border-radius: 10px;
+    border-width: 3px;
+    border-color: black;
+    filter: drop-shadow(-3px 5px 7px rgba(8, 8, 8, 0.719));
+    margin-right:5px;
+}
+.editBtn :hover {
+    filter: drop-shadow(-3px 5px 7px rgba(246, 245, 244, 0.719));
+    font-weight: bold;
+}
+
+.space {
+    border-bottom: 5px;
+    border-color: black;
 }

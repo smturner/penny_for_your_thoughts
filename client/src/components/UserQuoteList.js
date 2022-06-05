@@ -56,7 +56,7 @@ const [deleteQuote, { error }] = useMutation(DELETE_QUOTE);
 
     return (
         <>
-
+      <div className="space"></div>
         {<h3>{title}</h3>}
         {quotes && quotes.map((quote) => (
             <Card className="text-light mb-3 myQuotes">
@@ -71,11 +71,11 @@ const [deleteQuote, { error }] = useMutation(DELETE_QUOTE);
                         </footer>
                         {/* <Link to= {{ pathname: `create/edit/${quote._id}`}}
                         className="outline-secondary">Edit</Link> */}
-                           <Button variant="secondary" onClick={() => {
+                           <Button className="editBtn" variant="info" onClick={() => {
                              setModalInfo({text: quote.quoteText, author: quote.quoteAuthor, id: quote._id})
                              setShowModal(true)}}> Edit</Button>
                         {/* <Button variant="outline-secondary">Edit</Button>{' '} */}
-                        <Button onClick= {() => handleDelete(quote._id)} variant="danger">Delete</Button>
+                        <Button className="editBtn" onClick= {() => handleDelete(quote._id)} variant="danger">Delete</Button>
 
                     </blockquote>
                 </Card.Body>
