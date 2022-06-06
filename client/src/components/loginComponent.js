@@ -36,9 +36,7 @@ function Login(props) {
   
     return (
       <form onSubmit={handleFormSubmit}>
-         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
-          Something went wrong with your login credentials!
-        </Alert>
+
         <h3>Login</h3>
         <div className="mb-3">
           <label>Email address</label>
@@ -62,14 +60,7 @@ function Login(props) {
         </div>
         <div className="mb-3">
           <div className="custom-control custom-checkbox">
-            <input
-              type="checkbox"
-              className="custom-control-input"
-              id="customCheck1"
-            />
-            <label className="custom-control-label" htmlFor="customCheck1">
-              Remember me
-            </label>
+          
           </div>
         </div>
         <div className="d-grid">
