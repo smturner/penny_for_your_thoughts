@@ -33,8 +33,8 @@ const MainNav = () => {
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>
               ) : (
-                <Nav.Link href="/">Login</Nav.Link>
-              )}
+<>
+</>              )}
 
 
             </Nav>

@@ -74,9 +74,7 @@
 
 } */
 
-body {
-  padding-top: 60px;
-}
+
 @media (max-width: 979px) {
 .brand{
   font-size:21px;
