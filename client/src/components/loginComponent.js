@@ -5,6 +5,8 @@ import Auth from '../utils/auth';
 
 function Login(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
+  const [showAlert, setShowAlert] = useState(false);
+
   const [login, { error }] = useMutation(LOGIN_USER);
 
   const handleFormSubmit = async (event) => {
@@ -29,10 +31,15 @@ function Login(props) {
   };
 
   
+
+  
   
     return (
       <form onSubmit={handleFormSubmit}>
-        <h3>Sign In</h3>
+         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
+          Something went wrong with your login credentials!
+        </Alert>
+        <h3>Login</h3>
         <div className="mb-3">
           <label>Email address</label>
           <input
