@@ -40,7 +40,7 @@ function EditPost(props) {
         }
     }
     return (
-        <Card className="text-dark">
+        <Card className="text-light bg-dark">
             <Card.Header>Edit Your Quote</Card.Header>
       
         <Card.Body>

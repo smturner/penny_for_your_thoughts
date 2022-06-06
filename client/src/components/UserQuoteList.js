@@ -48,9 +48,10 @@ const [modalInfo, setModalInfo] = useState({text: '', author: '', id: ''})
         <>
       <div className="space"></div>
         {<h3 className="titleQuotes">{title}</h3>}
+        <br/>
         {quotes && quotes.map((quote) => (
             <Card className="text-light mb-3 myQuotes">
-                <Card.Header className="text-light">Posted by: You on {quote.createdAt}</Card.Header>
+                
                 <Card.Body>
                     <blockquote className="blockquote mb-0">
                         <p>
@@ -61,6 +62,8 @@ const [modalInfo, setModalInfo] = useState({text: '', author: '', id: ''})
                         </footer>
 
                         <Card.Footer>
+                        Posted by: You on {quote.createdAt}
+                        <br/>
                         {/* <Link to= {{ pathname: `create/edit/${quote._id}`}}
                         className="outline-secondary">Edit</Link> */}
                            <Button className="editBtn" variant="info" onClick={() => {

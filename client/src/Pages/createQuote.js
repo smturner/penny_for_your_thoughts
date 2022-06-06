@@ -41,7 +41,7 @@ const CreateQuote = ({setShowModal}) => {
 
     return (
         <>
-            <Card className= "text-dark">
+            <Card className= "text-light bg-dark">
                 <Card.Header>Create A New Quote</Card.Header>
                 {/* {Auth.loggedIn() ? ( */}
 
