@@ -23,9 +23,9 @@ password:penny123
 
 When the application is launched users are able to signup if it's their first time or login if they are returning. Once logged in it will take you to the home page where you will see top quotes displayed as well as your quotes and all quotes in one easy location. If you are looking for just your quotes or just all the quotes the navbar has those option, as well as the option to create a quote. This will pop down a modal for easy adding of quotes and will imediately update your feed and the all quote feed. As a user you are able to edit or delete  your quotes, as well as like other people's quotes.
 
-![Main Screenshot]( "Main Screenshot")
-![User Quotes]()
-![Create Quotes]()
+![Ima](./client/src/images/homePage.jpg)
+![Ima](./client/src/images/myQuotes.jpg)
+![Ima](./client/src/images/createQuote.jpg)
 
 ## Contributing
 Sarah Turner-https://github.com/smturner
