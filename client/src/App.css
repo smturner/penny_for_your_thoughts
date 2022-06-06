@@ -14,7 +14,9 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #000000;
+  background-image: url("./images/blackmarble.jpg");
+  background-size: cover;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

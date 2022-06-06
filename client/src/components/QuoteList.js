@@ -17,9 +17,10 @@ const Quote = ({
         <div className="main">
 
             {showTitle && <h3 className="titleQuotes">{title}</h3>}
+            <br/>
             {quotes && quotes.map((quotes) => (
                 <Card className="text-light mb-3 myQuotes">
-                    <Card.Header>Posted by: {quotes.quotePoster.userName} on {quotes.createdAt}</Card.Header>
+                    
                     <Card.Body>
                         <blockquote className="blockquote mb-0">
                             <p>
@@ -30,7 +31,8 @@ const Quote = ({
                                 {quotes.quoteAuthor}</footer>
                         </blockquote>
                     </Card.Body>
-                    <Card.Footer>
+                    <Card.Footer>Posted by: {quotes.quotePoster.userName} on {quotes.createdAt}
+                    <br/>
                         <LikeButton />
                     </Card.Footer>
 
