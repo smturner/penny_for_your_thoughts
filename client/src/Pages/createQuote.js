@@ -69,7 +69,7 @@ const CreateQuote = ({setShowModal}) => {
                             type="text" placeholder="Please enter the Author" />
                         </Form.Group>
                         
-                        <Button className="createQuote"  variant="primary" type="submit">
+                        <Button className="createQuote"  variant="success" type="submit">
                             Submit
                         </Button>
                         

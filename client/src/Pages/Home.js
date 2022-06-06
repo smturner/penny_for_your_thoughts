@@ -32,7 +32,7 @@ const Home = () => {
             <small className="text-muted">Last updated 3 mins ago</small>
           </Card.Footer>
         </Card> */}
-        <Container className="mainbg ">
+        <Container className="mainbg">
 
           <Row >
             <Col col-5>

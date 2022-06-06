@@ -35,7 +35,7 @@ const Signup = () => {
 
       return (
       <form onSubmit={handleFormSubmit}>
-        <h3>Sign Up</h3>
+        <h1>Sign Up</h1>
         <div className="mb-3">
           <label>Username</label>
           <input
@@ -70,7 +70,7 @@ const Signup = () => {
           />
         </div>
         <div className="d-grid">
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-warning editBtn">
             Sign Up
           </button>
         </div>
