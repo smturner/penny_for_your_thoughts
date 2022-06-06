@@ -32,7 +32,7 @@ function Login(props) {
   
     return (
       <form onSubmit={handleFormSubmit}>
-        <h3>Sign In</h3>
+        <h1>Sign In</h1>
         <div className="mb-3">
           <label>Email address</label>
           <input
@@ -66,7 +66,7 @@ function Login(props) {
           </div>
         </div>
         <div className="d-grid">
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-warning editBtn">
             Submit
           </button>
           <p className="">

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
 * {
-    /* background-color: azure; */
+    background-color: rgba(3, 3, 3, 0);
 }
 
 /* .main {
@@ -41,6 +41,13 @@ margin-bottom: 5px;
 
 }
 
+h1 {
+    color:black;
+    font: weight 700;
+    font-family: 'Courgette', cursive;
+    font-size: 60px;
+    -webkit-text-stroke: 1px rgb(255, 153, 0);
+}
 
 p {
  font-size: 35px;
