@@ -20,7 +20,7 @@
 
 .myQuotes {
     max-width: 100%;
-    margin-left: 20px;
+    /* margin-left: 20px; */
     /* font-family: 'Courgette', cursive; */
     background: rgb(70,43,1);
     background: linear-gradient(156deg, rgba(70,43,1,1) 3%, rgba(237,127,0,0.9948354341736695) 49%, rgba(0,0,0,1) 100%);
@@ -89,7 +89,7 @@ p {
  {
     font-weight: bold;
     background-color: rgb(103, 103, 102);
-    color:black;
+    color:whitesmoke;
     border-radius: 10px;
     border-width: 3px;
     border-color: black;
@@ -104,16 +104,16 @@ p {
 .allQuotes
 
 {
-    padding-top:155px;
+    padding-top:130px;
 }
 
 .homePage{
-    padding-top:135px;
+    padding-top:100px;
 }
 
 .userQuotes
 {
-    padding-top:155px;
+    padding-top:130px;
 }
 
 .carousel{
