@@ -16,7 +16,7 @@ const Quote = ({
     return (
         <div className="main">
 
-            {showTitle && <h3>{title}</h3>}
+            {showTitle && <h3 className="titleQuotes">{title}</h3>}
             {quotes && quotes.map((quotes) => (
                 <Card className="text-light mb-3 myQuotes">
                     <Card.Header>Posted by: {quotes.quotePoster.userName} on {quotes.createdAt}</Card.Header>

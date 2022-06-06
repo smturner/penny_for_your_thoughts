@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
+
+ 
+
 * {
-    background-color: rgba(3, 3, 3, 0);
+/*     background-color: rgba(3, 3, 3, 0); */
 }
+
 
 /* .main {
     background-color: rgb(7, 163, 163);
@@ -98,16 +102,16 @@ p {
 .allQuotes
 
 {
-    padding-top:100px;
+    padding-top:70px;
 }
 
 .homePage{
-    padding-top:77px;
+    padding-top:40px;
 }
 
 .userQuotes
 {
-    padding-top:100px;
+    padding-top:70px;
 }
 
 .carousel{

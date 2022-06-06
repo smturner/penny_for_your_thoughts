@@ -23,7 +23,7 @@ const UserQuotes = () => {
                     <UserQuoteList
                     username={username}
                     quotes={quotes}
-                    title="``Your Quotes``"
+                    title="``My Quotes``"
                      />
 
                 )}

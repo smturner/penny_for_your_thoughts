@@ -78,8 +78,15 @@ body {
   padding-top: 60px;
 }
 @media (max-width: 979px) {
-  .sticky-nav {
-    padding-top: 0px;
+.brand{
+  font-size:21px;
+  }
+  .titleQuotes{
+    font-size:40px;
+  }
+  .myQuotes{
+    font-size:large;
+    padding:5px;
   }
 }
 

@@ -13,7 +13,7 @@ const MainNav = () => {
     <div className="space"></div>
       <Navbar id='navbar' className="sticky-nav" fixed="top" bg="light" expand="lg">
         <Container className='navContainer'>
-          <Navbar.Brand className='brand' href="/">"Penny For Your Thoughts"</Navbar.Brand>
+          <Navbar.Brand className='brand' href="/home">"Penny For Your Thoughts"</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">

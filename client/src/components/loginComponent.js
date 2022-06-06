@@ -5,6 +5,8 @@ import Auth from '../utils/auth';
 
 function Login(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
+  const [showAlert, setShowAlert] = useState(false);
+
   const [login, { error }] = useMutation(LOGIN_USER);
 
   const handleFormSubmit = async (event) => {
@@ -29,10 +31,17 @@ function Login(props) {
   };
 
   
+
+  
   
     return (
       <form onSubmit={handleFormSubmit}>
+
+
+        
+
         <h1>Sign In</h1>
+
         <div className="mb-3">
           <label>Email address</label>
           <input
@@ -55,14 +64,7 @@ function Login(props) {
         </div>
         <div className="mb-3">
           <div className="custom-control custom-checkbox">
-            <input
-              type="checkbox"
-              className="custom-control-input"
-              id="customCheck1"
-            />
-            <label className="custom-control-label" htmlFor="customCheck1">
-              Remember me
-            </label>
+          
           </div>
         </div>
         <div className="d-grid">
